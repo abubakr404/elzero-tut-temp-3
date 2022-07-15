@@ -1,0 +1,7 @@
+// mixin responGridCol is mixin for control responsive of items in columns with screens
+
+@mixin responGridCol($min: 17rem, $gap: 1.5rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
+  gap: $gap;
+}

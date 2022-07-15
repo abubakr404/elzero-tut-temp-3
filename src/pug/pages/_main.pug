@@ -1,0 +1,59 @@
+block header
+  .container
+    h3.logo=myName
+    nav
+      ul
+        +liLArray(siteNav)
+        li
+          a(href="#") Other Links
+          .magaMenu
+            img(src=imgsPath + "megamenu.png", alt="")
+            ul
+              +liLIArray(otherLinksLeft)
+            ul
+              +liLIArray(otherLinksRight)
+
+block mainContent
+  include _landing
+  include _articles
+  include _gallery
+  include _features
+  include _testimonials
+  include _team
+  include _services
+  include _skills
+  include _work-steps
+  include _events
+  include _pricing
+  include _video
+  include _stats
+  include _discount
+
+block footerContent
+  .container
+    .box
+      h3=myName
+      ul.social
+        each social in Footer.socialMedia
+          li: a(href=social.link): i(class=social.icon)
+      p= Footer.info
+    .box
+      ul.links
+        each link in Footer.importantLinks
+          li: a(href=link.link data-icon= link.icon)=link.title
+    .box
+      .info
+        i(class= Footer.contacts.address.icon)
+        .text= Footer.contacts.address.text
+      .info
+        i(class= Footer.contacts.workTime.icon)
+        .text= Footer.contacts.workTime.text
+      .info
+        i(class= Footer.contacts.phones.icon)
+        .text
+          each number in Footer.contacts.phones.numbers
+            a(href="tel:" + number)= number
+    .box
+      .images
+        each image in Footer.images
+          img(src= imgsPath + image, alt="")

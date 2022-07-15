@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  color: $textColor;
+  // background-color: $backgroundColor;
+  line-height: 1.7;
+  font-family: $fontFamily;
+  font-size: 0.8125rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  padding: {
+    left: 1rem;
+    right: 1rem;
+  }
+  @include madiaContainer;
+}
+%font {
+  font-family: $mainFont;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  @extend %font;
+  text-transform: uppercase;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $headingsColor;
+}
+button {
+  @extend %buttonRest;
+  cursor: pointer;
+}
+img.mobile {
+  @include showIn(toSmall);
+}
+img.desktop {
+  @include hideIn(toSmall);
+}
+h2 {
+  font-size: 1.875rem;
+}

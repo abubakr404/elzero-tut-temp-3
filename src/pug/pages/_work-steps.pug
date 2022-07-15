@@ -1,0 +1,11 @@
+section.Work-Steps#Work-Steps
+  +specialHead(otherLinksLeft[4].name)
+  .container
+    img(src=imgsPath + workSteps.imgName, alt="")
+    .steps-box
+      each step in workSteps.Steps
+        .step-box
+          img(src=imgsPath + step.imgName, alt="")
+          .content
+            h3=step.title
+            p=step.text

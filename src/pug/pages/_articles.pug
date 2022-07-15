@@ -1,0 +1,5 @@
+section.Articles#Articles
+  +specialHead(siteNav[0])
+  .container
+    each article in Articles
+      +articleCard(article.title, article.text, imgsPath + article.imgName, article.link)

@@ -1,0 +1,5 @@
+section.Gallery#Gallery
+  +specialHead(siteNav[1])
+  .container
+    each img in Gallery
+      .imgBox: img(src=imgsPath + img.imgName, alt="portfolio-image")

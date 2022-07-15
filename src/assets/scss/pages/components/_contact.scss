@@ -1,0 +1,62 @@
+.contact {
+  .main-heading p {
+    margin-bottom: 0;
+  }
+  .content {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: percentage(8/12) percentage(4/12);
+    padding-top: $sectionPadding;
+    @include in(toSmall) {
+      grid-template-columns: 1fr;
+    }
+    form {
+      @include fCol;
+      gap: 2rem;
+      .input {
+        padding: 1.5rem 1.25rem;
+        color: $altHeadingsColor;
+        border: 1px solid $lightTextColor;
+        &::placeholder {
+          color: $altHeadingsColor;
+          text-transform: uppercase;
+        }
+      }
+      textarea {
+        height: 12.5rem;
+      }
+      button {
+        margin-top: 1.875rem;
+        @extend %primaryButton;
+        padding: 1.5rem 2.75rem;
+        @include in(fromMedium) {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+  .contact-ways {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    @include in(toSmall) {
+      order: -1;
+    }
+    @include in(fromMedium) {
+      grid-template-rows: 50% 50%;
+      grid-template-columns: 100%;
+      height: calc(100% - 7.75rem);
+    }
+    h4 {
+      color: $altHeadingsColor;
+      margin-bottom: 2.625rem;
+    }
+    a {
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+    address {
+      font-style: normal;
+    }
+  }
+}

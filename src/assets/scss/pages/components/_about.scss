@@ -1,0 +1,224 @@
+section.about {
+  padding: 0;
+  overflow: hidden;
+  .main-heading {
+    p {
+      margin-bottom: 0;
+    }
+  }
+  img {
+    position: relative;
+    bottom: -8rem;
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    @include in(toSmall) {
+      bottom: -16vw;
+    }
+  }
+}
+.statistics {
+  overflow: hidden;
+  color: $altColor;
+  position: relative;
+  background: {
+    color: $backgroundColor;
+    image: url("/src/assets/images/statistic.jpg");
+    size: cover;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    @extend %overlay;
+  }
+  .container {
+    position: relative;
+    @include responGridCol(17rem, 0);
+    background-color: rgba($altBackgroundColor, 0.7);
+  }
+  .stat {
+    padding: {
+      top: 2rem;
+      bottom: 2rem;
+    }
+    @include fCol(center);
+    @include in(smallMobile) {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid;
+      }
+      padding: {
+        top: 1rem;
+        bottom: 1rem;
+      }
+      font-size: 0.75rem;
+    }
+  }
+  .icon {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    &::before {
+      content: var(--icon);
+      font: {
+        family: "Font Awesome 6 Pro";
+        weight: 900;
+      }
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      color: $altColor;
+      @extend %fCenter;
+    }
+  }
+  h4 {
+    color: inherit;
+    font: {
+      size: 4rem;
+      weight: 600;
+    }
+    @include in(smallMobile) {
+      font-size: 2.5rem;
+    }
+  }
+}
+section.skills {
+  padding-bottom: $sectionPadding - 2rem;
+}
+.skills {
+  .container {
+    @include responGridCol(17rem, 5rem);
+    @include in(smallMobile) {
+      gap: 0rem;
+    }
+    @include in(fromMedium) {
+      gap: 10.625rem;
+    }
+  }
+  h3 {
+    color: $altHeadingsColor;
+    font: {
+      size: 1.25rem;
+      weight: 400;
+    }
+  }
+  p {
+    padding: 0;
+  }
+  .testimonial {
+    position: relative;
+    padding: 0 0 2rem;
+    .client {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 3.375rem;
+      @include in(toSmall) {
+        margin-bottom: 2.625rem;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    img {
+      width: 30%;
+      max-width: 6.25rem;
+      height: fit-content;
+      border-radius: 50%;
+      background-color: $backgroundColor;
+    }
+    .comment {
+      @include fCol(end);
+      justify-content: space-between;
+      max-height: 10rem;
+      border-bottom: 1px solid;
+      @include in(toSmall) {
+        align-items: center;
+        gap: 0.5rem;
+      }
+      p {
+        font-size: 0.75rem;
+        &:first-child {
+          flex: 1;
+          color: $altHeadingsColor;
+          overflow: auto;
+        }
+        &:last-child {
+          margin-bottom: 0.875rem;
+        }
+      }
+    }
+    .bullet {
+      li {
+        border-color: $textColor;
+        &.active {
+          border-color: $mainColor;
+        }
+      }
+    }
+  }
+  .our-skills {
+    h4 {
+      color: $altHeadingsColor;
+      font-weight: normal;
+    }
+    .prog {
+      height: 1.625rem;
+      background-color: $lightTextColor;
+      margin: 0.25rem 0 1.5rem;
+      position: relative;
+      &:before {
+        content: "";
+        height: 100%;
+        width: var(--prog);
+        background-color: $mainColor;
+        position: absolute;
+        left: 0;
+        @extend %transition;
+      }
+      span {
+        @extend %transition;
+        @extend %fCenter;
+        height: 100%;
+        width: fit-content;
+        position: relative;
+        padding: 0.5em;
+        color: $altColor;
+        background-color: $altHeadingsColor;
+        bottom: 100%;
+        transform: translate(-50%, -0.5rem);
+        &::after {
+          @include arrow(0.25rem, $altHeadingsColor, bottom, center);
+        }
+      }
+    }
+  }
+}
+.quote {
+  &,
+  .container {
+    position: relative;
+  }
+  min-height: 21.875rem;
+  color: $altColor;
+  text-align: center;
+  font-size: 1rem;
+  background: {
+    color: $altBackgroundColor;
+    image: url(/src/assets/images/quote.jpg);
+    size: cover;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    @extend %overlay;
+  }
+  q {
+    display: block;
+    text-transform: uppercase;
+    line-height: 45px;
+    margin-bottom: 1rem;
+    font: {
+      size: 1.8rem;
+      weight: 600;
+    }
+  }
+}

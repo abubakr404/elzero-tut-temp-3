@@ -1,0 +1,520 @@
+-
+  let assetsPath = "/src/assets/",
+  imgsPath = assetsPath + "imgs/";
+  const myName = "Elzero", title = "Elzero",
+  siteNav = ["Articles", "Gallery", "Features"],
+  otherLinksLeft = [
+    {name: "Testimonials", icon:"far fa-comments fa-fw"},
+    {name: "Team Members", icon:"far fa-user fa-fw"},
+    {name: "Services", icon:"far fa-building fa-fw"},
+    {name: "Our Skills", icon:"far fa-check-circle fa-fw"},
+    {name: "How It Works", icon:"far fa-clipboard fa-fw"},
+  ],
+  otherLinksRight = [
+    {name: "Events", icon:"far fa-calendar-alt fa-fw"},
+    {name: "Pricing Plans", icon:"fas fa-server fa-fw"},
+    {name: "Top Videos", icon:"far fa-play-circle fa-fw"},
+    {name: "Stats", icon:"far fa-chart-bar fa-fw"},
+    {name: "Request A Discount", icon:"fas fa-percent fa-fw"},
+  ],
+  Articles = [
+    {
+      title: "Test Title",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+      imgName: "cat-01.jpg",
+      link: ""
+    },
+    {
+      title: "Test Title",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+      imgName: "cat-02.jpg",
+      link: ""
+    },
+    {
+      title: "Test Title",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+      imgName: "cat-03.jpg",
+      link: ""
+    },
+    {
+      title: "Test Title",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+      imgName: "cat-04.jpg",
+      link: ""
+    },
+    {
+      title: "Test Title",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+      imgName: "cat-05.jpg",
+      link: ""
+    },
+    {
+      title: "Test Title",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+      imgName: "cat-06.jpg",
+      link: ""
+    },
+    {
+      title: "Test Title",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+      imgName: "cat-07.jpg",
+      link: ""
+    },
+    {
+      title: "Test Title",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit",
+      imgName: "cat-08.jpg",
+      link: ""
+    },
+  ],
+  Gallery = [
+    { imgName: "gallery-01.png", },
+    { imgName: "gallery-02.png", },
+    { imgName: "gallery-03.jpg", },
+    { imgName: "gallery-04.png", },
+    { imgName: "gallery-05.jpg", },
+    { imgName: "gallery-06.png", },
+  ],
+  Features = [
+    {
+      title: "Quality",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit harum hic veniam eligendi minima",
+      imgName: "features-01.jpg",
+      link: "#"
+    },
+    {
+      title: "Time",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit harum hic veniam eligendi minima",
+      imgName: "features-02.jpg",
+      link: "#"
+    },
+    {
+      title: "Passion",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit harum hic veniam eligendi minima",
+      imgName: "features-03.jpg",
+      link: "#"
+    },
+  ],
+  Testimonials = [
+    {
+      name: "Mohamed Farag",
+      service: "Full Stack Developer",
+      rate: 4,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat ducimus",
+      imgName: "avatar-01.png",
+    },
+    {
+      name: "Mohamed Ibrahim",
+      service: "Full Stack Developer",
+      rate: 4,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat ducimus",
+      imgName: "avatar-02.png",
+    },
+    {
+      name: "Shady Nabil",
+      service: "Full Stack Developer",
+      rate: 4,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat ducimus",
+      imgName: "avatar-03.png",
+    },
+    {
+      name: "Amr Hendawy",
+      service: "Full Stack Developer",
+      rate: 5,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat ducimus",
+      imgName: "avatar-04.png",
+    },
+    {
+      name: "Sherief Ashraf",
+      service: "Full Stack Developer",
+      rate: 3,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat ducimus",
+      imgName: "avatar-05.png",
+    },
+    {
+      name: "Osama Mohamed",
+      service: "Full Stack Developer",
+      rate: 3,
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat ducimus",
+      imgName: "avatar-06.png",
+    },
+  ],
+  Team = [
+    {
+      name: "Name",
+      text: "Simple Short Description",
+      imgName: "team-01.jpg",
+      contacts: [
+        { link: "#", icon: "fab fa-facebook-f"},
+        { link: "#", icon: "fab fa-twitter"},
+        { link: "#", icon: "fab fa-linkedin-in"},
+        { link: "#", icon: "fab fa-youtube"},
+      ],
+    },
+    {
+      name: "Name",
+      text: "Simple Short Description",
+      imgName: "team-02.jpg",
+      contacts: [
+        { link: "#", icon: "fab fa-facebook-f"},
+        { link: "#", icon: "fab fa-twitter"},
+        { link: "#", icon: "fab fa-linkedin-in"},
+        { link: "#", icon: "fab fa-youtube"},
+      ],
+    },
+    {
+      name: "Name",
+      text: "Simple Short Description",
+      imgName: "team-03.jpg",
+      contacts: [
+        { link: "#", icon: "fab fa-facebook-f"},
+        { link: "#", icon: "fab fa-twitter"},
+        { link: "#", icon: "fab fa-linkedin-in"},
+        { link: "#", icon: "fab fa-youtube"},
+      ],
+    },
+    {
+      name: "Name",
+      text: "Simple Short Description",
+      imgName: "team-04.jpg",
+      contacts: [
+        { link: "#", icon: "fab fa-facebook-f"},
+        { link: "#", icon: "fab fa-twitter"},
+        { link: "#", icon: "fab fa-linkedin-in"},
+        { link: "#", icon: "fab fa-youtube"},
+      ],
+    },
+    {
+      name: "Name",
+      text: "Simple Short Description",
+      imgName: "team-05.png",
+      contacts: [
+        { link: "#", icon: "fab fa-facebook-f"},
+        { link: "#", icon: "fab fa-twitter"},
+        { link: "#", icon: "fab fa-linkedin-in"},
+        { link: "#", icon: "fab fa-youtube"},
+      ],
+    },
+    {
+      name: "Name",
+      text: "Simple Short Description",
+      imgName: "team-06.png",
+      contacts: [
+        { link: "#", icon: "fab fa-facebook-f"},
+        { link: "#", icon: "fab fa-twitter"},
+        { link: "#", icon: "fab fa-linkedin-in"},
+        { link: "#", icon: "fab fa-youtube"},
+      ],
+    },
+    {
+      name: "Name",
+      text: "Simple Short Description",
+      imgName: "team-07.jpg",
+      contacts: [
+        { link: "#", icon: "fab fa-facebook-f"},
+        { link: "#", icon: "fab fa-twitter"},
+        { link: "#", icon: "fab fa-linkedin-in"},
+        { link: "#", icon: "fab fa-youtube"},
+      ],
+    },
+    {
+      name: "Name",
+      text: "Simple Short Description",
+      imgName: "team-08.jpg",
+      contacts: [
+        { link: "#", icon: "fab fa-facebook-f"},
+        { link: "#", icon: "fab fa-twitter"},
+        { link: "#", icon: "fab fa-linkedin-in"},
+        { link: "#", icon: "fab fa-youtube"},
+      ],
+    },
+  ],
+  Services = [
+    {
+      icon: "fas fa-user-shield fa-4x",
+      title: "Security",
+      link: "#",
+    },
+    {
+      icon: "fas fa-tools fa-4x",
+      title: "Fixing Issues",
+      link: "#",
+    },
+    {
+      icon: "fas fa-map-marked-alt fa-4x",
+      title: "Location",
+      link: "#",
+    },
+    {
+      icon: "fas fa-laptop-code fa-4x",
+      title: "Coding",
+      link: "#",
+    },
+    {
+      icon: "fas fa-palette fa-4x",
+      title: "Security",
+      link: "#",
+    },
+    {
+      icon: "fas fa-bullhorn fa-4x",
+      title: "Marketing",
+      link: "#",
+    },
+  ],
+  ourSkills = {
+    imgName: "skills.png",
+    Skills: [
+      { title: "HTML", progress: 80, },
+      { title: "CSS", progress: 85, },
+      { title: "JavaScript", progress: 75, },
+      { title: "Python", progress: 80, },
+    ],
+  },
+  workSteps = {
+    imgName: "work-steps.png",
+    Steps: [
+      {
+        title: "Business Analysis",
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim nesciunt obcaecati quisquam quis laborum recusandae debitis vel",
+        imgName: "work-steps-1.png",
+      },
+      {
+        title: "Architecture",
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim nesciunt obcaecati quisquam quis laborum recusandae debitis vel",
+        imgName: "work-steps-2.png",
+      },
+      {
+        title: "Developement",
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim nesciunt obcaecati quisquam quis laborum recusandae debitis vel",
+        imgName: "work-steps-3.png",
+      },
+    ],
+  },
+  Events = {
+    imgName: "events.png",
+    dots: "dots.png",
+    time: "20-09-2022",
+    title: "Tech Masters Event 2021",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vero tenetur doloremque iusto ut adipisci quam ratione aliquam excepturi nulla in harum, veritatis porro",
+    subscribe: {
+      button: "Subscribe",
+      placeholder: "Enter Your Email",
+    },
+  },
+  Pricing = {
+    dots: "dots.png",
+    currency: "$",
+    every: "Pre Month",
+    planIcon: "\\f00c",
+    plans: [
+      {
+        special: { title: "Most Popular", isSpecial: false, },
+        head: {
+          title: "Basic",
+          img: "hosting-basic.png",
+          price: 15,
+        },
+        features: [
+          "10GB HDD Space",
+          "5 Email Addresses",
+          "2 Subdomains",
+          "4 Databases",
+          "Basic Support",
+        ],
+        footer: {
+          title: "Choose Plan",
+          link: "#",
+        },
+      },
+      {
+        special: { title: "Most Popular", isSpecial: true, },
+        head: {
+          title: "Advanced",
+          img: "hosting-advanced.png",
+          price: 25,
+        },
+        features: [
+          "20GB HDD Space",
+          "10 Email Addresses",
+          "5 Subdomains",
+          "8 Databases",
+          "Advanced Support",
+        ],
+        footer: {
+          title: "Choose Plan",
+          link: "#",
+        },
+      },
+      {
+        special: { title: "Most Popular", isSpecial: false, },
+        head: {
+          title: "Professional",
+          img: "hosting-professional.png",
+          price: 45,
+        },
+        features: [
+          "50GB HDD Space",
+          "20 Email Addresses",
+          "10 Subdomains",
+          "20 Databases",
+          "Professional Support",
+        ],
+        footer: {
+          title: "Choose Plan",
+          link: "#",
+        },
+      },
+    ],
+  },
+  Video = {
+    title: "Top Videos",
+    icon: "fas fa-random",
+    videoList: [
+      {
+        title: "How To Create Sub Domain",
+        time: "05:18",
+        info: "How To Create Sub Domain",
+        previewImg: "video-preview.jpg",
+        link: "#",
+        isActive: false,
+      },
+      {
+        title: "Playing With The DNS",
+        time: "03:18",
+        info: "Playing With The DNS",
+        previewImg: "video-preview.jpg",
+        link: "#",
+        isActive: false,
+      },
+      {
+        title: "Everything About The Virtual Hosts",
+        time: "05:25",
+        info: "Everything About The Virtual Hosts",
+        previewImg: "video-preview.jpg",
+        link: "#",
+        isActive: true,
+      },
+      {
+        title: "How To Monitor Your Website",
+        time: "04:16",
+        info: "How To Monitor Your Website",
+        previewImg: "video-preview.jpg",
+        link: "#",
+        isActive: false,
+      },
+      {
+        title: "Uncharted Beating The Last Boss",
+        time: "07:48",
+        info: "Uncharted Beating The Last Boss",
+        previewImg: "video-preview.jpg",
+        link: "#",
+        isActive: false,
+      },
+      {
+        title: "Ys Oath In Felghana Overview",
+        time: "03:12",
+        info: "Ys Oath In Felghana Overview",
+        previewImg: "video-preview.jpg",
+        link: "#",
+        isActive: false,
+      },
+      {
+        title: "Ys Series All Games Ending",
+        time: "08:10",
+        info: "Ys Series All Games Ending",
+        previewImg: "video-preview.jpg",
+        link: "#",
+        isActive: false,
+      },
+    ],
+  },
+  Stats = {
+    title: "Our Awesome Stats",
+    statsList: [
+      { icon: "far fa-user fa-2x fa-fw", number: 150, title: "Clients", },
+      { icon: "fas fa-code fa-2x fa-fw", number: 135, title: "Projects", },
+      { icon: "fas fa-globe-asia fa-2x fa-fw", number: 50, title: "Countries", },
+      { icon: "far fa-money-bill-alt fa-2x fa-fw", number: 500, title: "Money", },
+    ],
+  },
+  Discount = {
+    info: {
+      title: "We Have A Discount",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi asperiores consectetur, recusandae ratione provident necessitatibus, cumque delectus commodi fuga praesentium beatae. Totam vel similique laborum dicta aperiam odit doloribus corporis.",
+      imgName: "discount.png",
+    },
+    request: {
+      title: "Request A Discount",
+      pName: "Your Name",
+      pEmail: "Your Email",
+      pPhone: "Your Phone",
+      pMessage: "Tell Us About Your Needs",
+      submit: "Send",
+    },
+  },
+  Footer = {
+    socialMedia: [
+      {
+        link: "#",
+        icon: "fab fa-facebook-f",
+      },
+      {
+        link: "#",
+        icon: "fab fa-twitter",
+      },
+      {
+        link: "#",
+        icon: "fab fa-youtube",
+      },
+    ],
+    info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus nulla rem, dignissimos iste aspernatur",
+    importantLinks: [
+      {
+        link: "#",
+        icon: "\\F101",
+        title: "Important Link 1",
+      },
+      {
+        link: "#",
+        icon: "\\F101",
+        title: "Important Link 2",
+      },
+      {
+        link: "#",
+        icon: "\\F101",
+        title: "Important Link 3",
+      },
+      {
+        link: "#",
+        icon: "\\F101",
+        title: "Important Link 4",
+      },
+      {
+        link: "#",
+        icon: "\\F101",
+        title: "Important Link 5",
+      },
+    ],
+    contacts: {
+      address: {
+        icon: "fas fa-map-marker-alt fa-fw",
+        text: "Egypt, Giza, Inside The Sphinx, Room Number 220",
+      },
+      workTime: {
+        icon: "far fa-clock fa-fw",
+        text: "Business Hours: From 10:00 To 18:00",
+      },
+      phones: {
+        icon: "fas fa-phone-volume fa-fw",
+        numbers: ["+20123456789", "+20198765432"],
+      },
+    },
+    images: [
+      "gallery-01.png",
+      "gallery-02.png",
+      "gallery-03.jpg",
+      "gallery-04.png",
+      "gallery-05.jpg",
+      "gallery-06.png",
+    ]
+  };

@@ -1,0 +1,76 @@
+// mixin in is mixin for control responsive with screens
+// is upgreted from responMedia mixin
+
+@mixin in($madia: toMobile) {
+  @if $madia == smallMobile {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $madia == fromMobile {
+    @media (min-width: 767px) {
+      @content;
+    }
+  } @else if $madia == toMobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $madia == small {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $madia == fromSmall {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $madia == toSmall {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $madia == medium {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $madia == fromMedium {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $madia == toMedium {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  } @else if $madia == medium {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $madia == large {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// mixin madiaContainer is mixin for control content with all screens
+
+@mixin madiaContainer {
+  @include in(small) {
+    width: 750px;
+  }
+  @include in(medium) {
+    width: 970px;
+  }
+  @include in(large) {
+    width: 1170px;
+  }
+}
+@mixin showIn($media: toMobile) {
+  display: none;
+  @include in($media) {
+    display: block;
+  }
+}
+@mixin hideIn($media: toMobile) {
+  display: block;
+  @include in($media) {
+    display: none;
+  }
+}

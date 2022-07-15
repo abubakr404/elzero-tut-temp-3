@@ -1,0 +1,74 @@
+%transition {
+  transition: 0.3s;
+}
+
+%sectionPadding {
+  padding: {
+    top: $sectionPadding;
+    bottom: $sectionPadding;
+  }
+  @include in(toSmall) {
+    padding: {
+      top: 2rem;
+      bottom: 2rem;
+    }
+  }
+}
+%hPCenter {
+  @include hPCenter;
+}
+%vPCenter {
+  @include vPCenter;
+}
+%fCenter {
+  @include fCenter;
+}
+%aCenter {
+  @include aCenter;
+}
+%ulRest {
+  @include ulRest;
+}
+%buttonRest {
+  @include buttonRest;
+}
+%overlay {
+  @include overlay;
+}
+%boxCard {
+  position: absolute;
+  @extend %vPCenter;
+  background-color: rgba($altBackgroundColor, 0.7);
+  padding: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+  @include in(toSmall) {
+    width: 100% !important;
+    justify-content: center;
+  }
+}
+
+section:not(.landing, .desgin) {
+  @extend %sectionPadding;
+  @include in(toSmall) {
+    text-align: center;
+  }
+}
+.buttons {
+  @extend %fCenter;
+  gap: 2rem;
+}
+%primaryButton {
+  background-color: $mainColor;
+  color: $altColor;
+}
+@import "./components/components";
+@import "../layout/header";
+@import "./components/landing";
+@import "./components/services";
+@import "./components/portfolio";
+@import "./components/about";
+@import "./components/pricing";
+@import "./components/contact";
+@import "../layout/footer";

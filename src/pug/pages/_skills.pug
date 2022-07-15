@@ -1,0 +1,9 @@
+section.Skills#Skills
+  +specialHead(otherLinksLeft[3].name)
+  .container
+    img(src=imgsPath + ourSkills.imgName, alt="")
+    .skills-box
+      each skill in ourSkills.Skills
+        .skill-box
+          h3 #{skill.title} #[span #{skill.progress}%]
+          .the-prog: span.prog(style = "width: 0%" data-width = skill.progress)

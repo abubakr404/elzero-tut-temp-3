@@ -1,0 +1,68 @@
+footer {
+  padding: 2.25rem;
+  background: {
+    color: $backgroundColor;
+    image: url(/src/assets/images/footer.jpg);
+    size: cover;
+  }
+  color: $altColor;
+  text-align: center;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    @extend %overlay;
+  }
+  .container {
+    padding: 5rem;
+    position: relative;
+  }
+  .social {
+    margin-top: 3.125rem;
+    @extend %fCenter;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: relative;
+    &::before {
+      @include line($altColor, 0.0625rem, bottom, 14.375rem);
+      bottom: 50%;
+      right: 50%;
+      @extend %aCenter;
+    }
+    p {
+      text-transform: uppercase;
+      font: {
+        weight: 400;
+        size: 1rem;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 1rem;
+      &:hover,
+      &:focus,
+      &:active {
+        color: $mainColor;
+      }
+    }
+  }
+  ul {
+    @extend %ulRest;
+    @extend %fCenter;
+    gap: 2rem;
+  }
+  p {
+    position: relative;
+    font: {
+      weight: 600;
+      size: 0.75rem;
+    }
+    .highlight {
+      color: $mainColor;
+    }
+    @include in(toSmall) {
+      font-size: 0.625rem;
+    }
+  }
+}

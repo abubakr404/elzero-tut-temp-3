@@ -1,0 +1,11 @@
+section.Testimonials#Testimonials
+  +specialHead(otherLinksLeft[0].name)
+  .container
+    each customer in Testimonials
+      .customer-box
+        .imgBox: img(src=imgsPath + customer.imgName, alt=customer.name + "-image")
+        .content 
+          h3 #{customer.name}
+          span.title #{customer.service}
+          +rateStars(customer.rate)
+          p #{customer.text}

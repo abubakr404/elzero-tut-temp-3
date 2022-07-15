@@ -1,0 +1,14 @@
+section.Video#Video
+  +specialHead(otherLinksRight[2].name)
+  .container
+    .video-list
+      .caption #{Video.title} #[i(class=Video.icon)]
+      ul
+        each video in Video.videoList
+          li(class=video.isActive ? "active" : false): a(href=video.link)  #{video.title} #[span.time #{video.time}]
+    .preview
+      each activeVideo in Video.videoList
+        if activeVideo.isActive
+          img(src=imgsPath + activeVideo.previewImg, alt="")
+          .info= activeVideo.info
+          - break;

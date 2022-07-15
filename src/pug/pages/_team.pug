@@ -1,0 +1,13 @@
+section.Team#Team
+  +specialHead(otherLinksLeft[1].name)
+  .container
+    each member in Team
+      .member-box
+        .top
+          img(src=imgsPath + member.imgName, alt=member.name + "-image")
+          .social
+            each social in member.contacts
+              a(href=social.link): i(class=social.icon)
+        .content
+          h3 #{member.name}
+          p #{member.text}

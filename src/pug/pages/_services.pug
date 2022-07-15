@@ -1,0 +1,10 @@
+section.Services#Services
+  +specialHead(otherLinksLeft[2].name)
+  .container
+    each service, index in Services
+      .service-box
+        .service
+          i(class=service.icon)
+          h3 #{service.title}
+        .info(data-number = index + 1)
+          a(href=service.link) Details

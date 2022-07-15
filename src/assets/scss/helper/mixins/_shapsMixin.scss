@@ -1,0 +1,192 @@
+// circle mixin is genral mixin can make circle with all size and fill in or out
+// the first @param $volume should be the size of circle
+// the second @param $borderSize should be the border size of circle
+// the third @param $backgroundColor should be the background color of circle
+// the fourth @param $borderColor should be the border color of circle
+
+@mixin circle(
+  $volume: 0.9375rem,
+  $borderSize: 0.0625rem,
+  $borderColor: black,
+  $backgroundColor: transparent
+) {
+  width: $volume;
+  height: $volume;
+  border-radius: 50%;
+  border: $borderSize solid $borderColor;
+  background-color: $backgroundColor;
+}
+// line mixin is genral mixin can make line in all direction and position
+// the first @param $color should be the color of line
+// the second @param $height should be the height of line
+// the third @param $direction should select the direction of line is in top or bottom or right or left
+// the fourth @param $width should be the size of line
+// the fifth @param $padding should be the padding of element if you want to start the line after it
+// the sixth @param $offset should be the distance between the element and the line
+
+@mixin line(
+  $color: black,
+  $height: 0.0625rem,
+  $direction: bottom,
+  $width: 100%,
+  $padding: 0px,
+  $offset: $padding
+) {
+  content: "";
+  position: absolute;
+  background-color: $color;
+  #{$direction}: $offset / 2;
+  @if $direction == top or $direction == bottom {
+    right: $padding / 2;
+    height: $height;
+    width: calc(#{$width} - #{$padding});
+  } @else if $direction == left or $direction == right {
+    top: $padding / 2;
+    width: $height;
+    height: calc(#{$width} - #{$padding});
+  }
+}
+// triangleArrow mixin is genral mixin can make triangle Arrow in all direction and position
+// first @param $width should be the size of triangleArrow
+// the second @param $color should be the color of triangleArrow
+// the third @param $direction should select the direction of triangleArrow is in top or bottom or right or left
+// the fourth @param $position should select the where position of triangleArrow in the line
+// is the start or in the middle or in the end
+
+@mixin triangleArrow(
+  $width: 1rem,
+  $color: black,
+  $direction: top,
+  $position: end
+) {
+  content: "";
+  position: absolute;
+  border: $width solid;
+  // top arrow
+  @if $direction == top {
+    @if $position == end {
+      right: 0;
+      border-color: transparent $color $color transparent;
+    }
+    @elseif $position == center {
+      right: 50%;
+      transform: translateX(50%);
+      border-color: transparent $color $color $color;
+    }
+    @elseif $position == start {
+      left: 0;
+      border-color: transparent transparent $color $color;
+    }
+    top: $width * -2;
+  }
+
+  // bottom arrow
+  @elseif $direction == bottom {
+    @if $position == end {
+      right: 0;
+      border-color: $color $color transparent transparent;
+    }
+    @elseif $position == center {
+      right: 50%;
+      transform: translateX(50%);
+      border-color: $color $color transparent $color;
+    }
+    @elseif $position == start {
+      left: 0;
+      border-color: $color transparent transparent $color;
+    }
+    bottom: $width * -2;
+  }
+
+  // left arrow
+  @elseif $direction == left {
+    @if $position == end {
+      bottom: 0;
+      border-color: transparent $color $color transparent;
+    }
+    @elseif $position == center {
+      bottom: 50%;
+      transform: translateY(50%);
+      border-color: $color $color $color transparent;
+    }
+    @elseif $position == start {
+      top: 0;
+      border-color: $color $color transparent transparent;
+    }
+    left: $width * -2;
+  }
+
+  // right arrow
+  @elseif $direction == right {
+    @if $position == end {
+      bottom: 0;
+      border-color: transparent transparent $color $color;
+    }
+    @elseif $position == center {
+      bottom: 50%;
+      transform: translateY(50%);
+      border-color: $color transparent $color $color;
+    }
+    @elseif $position == start {
+      top: 0;
+      border-color: $color transparent transparent $color;
+    }
+    right: $width * -2;
+  }
+}
+
+// arrow mixin is genral mixin can make arrow in all direction and position
+// first @param $width should be the size of arrow
+// the second @param $color should be the color of arrow
+// the third @param $direction should select the direction of arrow is in top or bottom or right or left
+// the fourth @param $position should select the where position of arrow in the line
+// is the start or in the middle or in the end
+
+@mixin arrow($width: 1rem, $color: black, $direction: top, $position: center) {
+  content: "";
+  position: absolute;
+  border: $width solid;
+  @if $direction == top {
+    border-color: transparent transparent $color transparent;
+    top: $width * -2;
+  }
+  @elseif $direction == bottom {
+    border-color: $color transparent transparent;
+    bottom: $width * -2;
+  }
+  @elseif $direction == left {
+    border-color: transparent $color transparent transparent;
+    left: $width * -2;
+  }
+  @elseif $direction == right {
+    border-color: transparent transparent transparent $color;
+    right: $width * -2;
+  }
+
+  @if $position == end {
+    @if $direction == top or $direction == bottom {
+      right: $width / 2;
+    }
+    @elseif $direction == left or $direction == right {
+      top: $width / 2;
+    }
+  }
+  @elseif $position == start {
+    @if $direction == top or $direction == bottom {
+      left: $width / 2;
+    }
+    @elseif $direction == left or $direction == right {
+      bottom: $width / 2;
+    }
+  }
+  @elseif $position == center {
+    @if $direction == top or $direction == bottom {
+      right: 50%;
+      transform: translateX(50%);
+    }
+    @elseif $direction == left or $direction == right {
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+  }
+}

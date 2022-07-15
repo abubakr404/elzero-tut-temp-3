@@ -1,0 +1,8 @@
+section.Stats#Stats
+  h2=Stats.title
+  .container
+    each stat in Stats.statsList
+      .stat
+        i(class=stat.icon)
+        span.number= stat.number
+        span.title= stat.title

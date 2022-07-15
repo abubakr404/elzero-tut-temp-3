@@ -1,0 +1,49 @@
+.landing {
+  min-height: 100vh;
+  position: relative;
+  color: $altColor;
+  background: {
+    color: $backgroundColor;
+    image: url(/src/assets/images/landing_1.jpg);
+    size: cover;
+    repeat: no-repeat;
+  }
+  &::after {
+    content: "";
+    @extend %overlay;
+  }
+  .text {
+    @extend %boxCard;
+    width: 57%;
+    .content {
+      max-width: 35.5rem;
+    }
+  }
+  h2 {
+    color: inherit;
+    font-weight: 400;
+    @include in(smallMobile) {
+      font-size: 1.125rem;
+    }
+  }
+  p {
+    margin: 1.5rem 0;
+    line-height: 2;
+    @include in(smallMobile) {
+      font-size: 0.625rem;
+    }
+  }
+  button.arrow {
+    position: absolute;
+    z-index: 2;
+    padding: 1rem 1.875rem;
+    font-size: 2rem;
+    @extend %vPCenter;
+    &:nth-of-type(2) {
+      right: 0;
+    }
+    @include in(toSmall) {
+      display: none;
+    }
+  }
+}

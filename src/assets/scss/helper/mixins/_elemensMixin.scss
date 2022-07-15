@@ -1,0 +1,89 @@
+// mixin fCenter is mixin for make the selector flex and make content center
+
+@mixin fCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// mixin aCenter is mixin for make the selector in center of the screen by use position absolute
+
+@mixin aCenter {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+}
+
+// mixin vPCenter is mixin for make the selector in center of the line vertecl
+
+@mixin vPCenter {
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+// mixin hPCenter is mixin for make the selector in center of the line horizentl
+
+@mixin hPCenter {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+// mixin fSpacer is mixin for make space between items in each direction by display the element flex
+
+@mixin fSpacer($direction: row, $alignCenter: true) {
+  display: flex;
+  flex-direction: if($direction == column, column, row);
+  justify-content: space-between;
+  @if $alignCenter != false {
+    align-items: center;
+  }
+}
+
+// mixin fCol is mixin for make flex and its direction is column and has option to make the align center
+
+@mixin fCol($align: stretch) {
+  display: flex;
+  flex-direction: column;
+  @if $align == stretch {
+    align-items: stretch;
+  } @else if $align == start {
+    align-items: flex-start;
+  } @else if $align == center {
+    align-items: center;
+  } @else if $align == end {
+    align-items: flex-end;
+  }
+}
+
+// mixin radiBox is mixin make the first element has radius border in two side and the last element
+// has two radius border in opsiet side
+// the prameter $radius for the value of the radius and the prameter $direction for the direction of box
+// vertecl or horizentl
+
+@mixin radiBox($radius, $direction: true) {
+  &:first-of-type {
+    border-radius: if($direction, $radius 0 0 $radius, $radius $radius 0 0);
+  }
+  &:last-of-type {
+    border-radius: if($direction, 0 $radius $radius 0, 0 0 $radius $radius);
+  }
+}
+
+// overlay mixin is genral mixin can make overlay for all elements
+
+@mixin overlay(
+  $color: #000,
+  $opacity: 0.6,
+  $width: 100%,
+  $height: 100%,
+  $y: 0,
+  $x: 0
+) {
+  position: absolute;
+  top: $y;
+  right: $x;
+  width: $width;
+  height: $height;
+  background-color: rgba($color, $opacity);
+}

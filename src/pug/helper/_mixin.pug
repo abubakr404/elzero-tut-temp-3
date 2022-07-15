@@ -1,0 +1,56 @@
+mixin liArray(lisArray)
+  each li in lisArray
+    li=li
+
+mixin liIArray(lisArray, icon)
+  each li in lisArray
+    li #[i(class=icon)] #{li}
+
+mixin liLArray(lisArray)
+  each li in lisArray
+    li: a(href="#"+ li)=li
+
+mixin liLIArray(lisArray)
+  each li in lisArray
+    li: a(href="#"+ li.name) #[i(class=li.icon)] #{li.name}
+
+mixin specialHead(title)
+  h2.special-head=title
+
+mixin articleCard(title, text, img, moreLink)
+  .article-card
+    img(src=img, alt=title + "-image")
+    .content
+      h3=title
+      p=text
+    .more
+      a(href=moreLink) Read More
+      i(class="fas fa-long-arrow-alt-right")
+
+mixin rateStars(rateNumber = 0, starsNumber = 5)
+  .rate
+    - let index = 0;
+    while index < starsNumber
+      - let star = index < rateNumber ? "filled far fa-star" : "far fa-star";
+      i(class=star)
+      -index++;
+
+mixin downCount(counterTitles = ["Day", "Hour", "Minute", "Second"])
+  .down-count
+    each title in counterTitles
+      .count-box
+        .number 00
+        .title=title
+
+mixin plans(plans, currency, every, planIcon)
+  .plans
+    each plan in plans
+      .plan
+        .head
+          h3=plan.head.title
+          img(src=imgsPath + plan.head.img, alt="")
+          span.price(data-currency=currency data-every=every)
+        ul.features
+            each feature in plan.features
+              li(data-icon = planIcon)=feature
+        .footer: a(href=plan.footer.link)=plan.footer.title 

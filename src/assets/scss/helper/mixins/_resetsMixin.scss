@@ -1,0 +1,30 @@
+// mixin ulRest is mixin for rest the un order list
+
+@mixin ulRest {
+  list-style: none;
+  padding: 0;
+}
+
+// mixin buttonRest is mixin for rest the button
+
+@mixin buttonRest($fFamily: inherit, $color: inherit) {
+  padding: 0;
+  border: none;
+  font-family: $fFamily;
+  color: $color;
+  background-color: transparent;
+}
+
+// mixin maCoReset is mixin for reset container width in all screens
+
+@mixin maCoReset {
+  @include in(small) {
+    width: 100%;
+  }
+  @include in(medium) {
+    width: 100%;
+  }
+  @include in(large) {
+    width: 100%;
+  }
+}
