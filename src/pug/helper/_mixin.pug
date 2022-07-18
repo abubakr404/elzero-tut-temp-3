@@ -12,7 +12,7 @@ mixin liLArray(lisArray)
 
 mixin liLIArray(lisArray)
   each li in lisArray
-    li: a(href="#"+ li.name) #[i(class=li.icon)] #{li.name}
+    li: a(href="#"+ li.link) #[i(class=li.icon)] #{li.name}
 
 mixin specialHead(title)
   h2.special-head=title

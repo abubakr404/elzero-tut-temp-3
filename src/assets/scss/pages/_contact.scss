@@ -16,7 +16,7 @@
       .input {
         padding: 1.5rem 1.25rem;
         color: $altHeadingsColor;
-        border: 1px solid $lightTextColor;
+        border: 1px solid #ccc;
         &::placeholder {
           color: $altHeadingsColor;
           text-transform: uppercase;

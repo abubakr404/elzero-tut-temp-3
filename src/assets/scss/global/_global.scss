@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap");
 *,
 :after,
 :before {
@@ -7,6 +7,24 @@
   -moz-box-sizing: border-box;
   margin: 0;
 }
+:root {
+  --main-color: #{$mainColor};
+  --alt-color: #{$altColor};
+  --text-color: #{$textColor};
+  --alt-text-color: #{$altTextColor};
+  --background-color: #{$backgroundColor};
+  --alt-background-color: #{$altBackgroundColor};
+  --section-background: #{$sectionBackground};
+  --headings-color: #{$headingsColor};
+  --alt-headings-color: #{$altHeadingsColor};
+  --main-transition: #{$mainTransition};
+  --header-height: #{$headerHeight};
+  --main-padding-top: #{$sectionPadding};
+  --main-padding-bottom: #{$sectionPadding};
+  --font-family: #{$fontFamily};
+  --main-font: #{$mainFont};
+  --main-font-size: #{$mainFontSize};
+}
 html {
   scroll-behavior: smooth;
 }
@@ -14,11 +32,11 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
-  color: $textColor;
-  // background-color: $backgroundColor;
-  line-height: 1.7;
-  font-family: $fontFamily;
-  font-size: 0.8125rem;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.15;
+  font-family: var(--font-family);
+  font-size: var(--main-font-size);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,7 +53,7 @@ body {
   @include madiaContainer;
 }
 %font {
-  font-family: $mainFont;
+  font-family: var(--main-font);
 }
 h1,
 h2,
@@ -53,18 +71,18 @@ h3,
 h4,
 h5,
 h6 {
-  color: $headingsColor;
+  color: var(--headings-color);
 }
 button {
   @extend %buttonRest;
   cursor: pointer;
 }
-img.mobile {
-  @include showIn(toSmall);
+img {
+  max-width: 100%;
 }
-img.desktop {
-  @include hideIn(toSmall);
+a {
+  @include aRest;
 }
-h2 {
-  font-size: 1.875rem;
+ul {
+  @extend %ulRest;
 }

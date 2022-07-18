@@ -1,11 +1,15 @@
 %transition {
-  transition: 0.3s;
+  transition: var(--main-transition);
+}
+
+%bold {
+  font-weight: bold;
 }
 
 %sectionPadding {
   padding: {
-    top: $sectionPadding;
-    bottom: $sectionPadding;
+    top: var(--main-padding-top);
+    bottom: var(--main-padding-bottom);
   }
   @include in(toSmall) {
     padding: {
@@ -13,6 +17,9 @@
       bottom: 2rem;
     }
   }
+}
+%twoColG {
+  @include twoColG;
 }
 %hPCenter {
   @include hPCenter;
@@ -49,7 +56,7 @@
   }
 }
 
-section:not(.landing, .desgin) {
+section:not(.landing) {
   @extend %sectionPadding;
   @include in(toSmall) {
     text-align: center;
@@ -59,16 +66,17 @@ section:not(.landing, .desgin) {
   @extend %fCenter;
   gap: 2rem;
 }
+
 %primaryButton {
   background-color: $mainColor;
   color: $altColor;
 }
-@import "./components/components";
+@import "components";
 @import "../layout/header";
-@import "./components/landing";
-@import "./components/services";
-@import "./components/portfolio";
-@import "./components/about";
-@import "./components/pricing";
-@import "./components/contact";
+@import "landing";
+@import "services";
+@import "portfolio";
+@import "about";
+@import "pricing";
+@import "contact";
 @import "../layout/footer";

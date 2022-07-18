@@ -162,7 +162,7 @@ section.skills {
     }
     .prog {
       height: 1.625rem;
-      background-color: $lightTextColor;
+      background-color: #eee;
       margin: 0.25rem 0 1.5rem;
       position: relative;
       &:before {
@@ -201,11 +201,6 @@ section.skills {
   color: $altColor;
   text-align: center;
   font-size: 1rem;
-  background: {
-    color: $altBackgroundColor;
-    image: url(/src/assets/images/quote.jpg);
-    size: cover;
-  }
   &::before {
     content: "";
     position: absolute;
