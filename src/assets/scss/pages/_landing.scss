@@ -1,43 +1,53 @@
 .landing {
+  position: relative;
   height: calc(100vh - var(--header-height));
   background: {
     color: var(--section-background);
   }
-  .container {
-    @extend %twoColG;
+  &::after {
+    content: "";
+    position: absolute;
+    height: 15rem;
+    width: 200%;
+    transform: rotate(358deg) translate(-10%, 35%);
+    border-radius: 50%;
+    background-color: $white;
+    bottom: 0;
   }
-  .text {
-    @extend %boxCard;
-    width: 57%;
-    .content {
-      max-width: 35.5rem;
+  .container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 7.5rem;
+    height: 100%;
+    > img {
+      animation: upDown 4s linear infinite alternate;
+      z-index: 1;
+    }
+    > a {
+      @extend %hPCenter;
+      z-index: 1;
+      color: var(--main-color);
+      position: absolute;
+      bottom: 2rem;
+      animation: bouncing 1.5s infinite;
     }
   }
-  h2 {
-    color: black;
-    font-weight: 400;
+  h1 {
+    text-transform: none;
+    font-size: 2.5rem;
+    letter-spacing: -0.125rem;
     @include in(smallMobile) {
       font-size: 1.125rem;
     }
   }
   p {
-    margin: 1.5rem 0;
-    line-height: 2;
+    margin: 0.03125rem 0 0;
+    max-width: 31.25rem;
+    line-height: 1.7;
+    font-size: 1.4375rem;
     @include in(smallMobile) {
-      font-size: 0.625rem;
-    }
-  }
-  button.arrow {
-    position: absolute;
-    z-index: 2;
-    padding: 1rem 1.875rem;
-    font-size: 2rem;
-    @extend %vPCenter;
-    &:nth-of-type(2) {
-      right: 0;
-    }
-    @include in(toSmall) {
-      display: none;
+      font-size: 1rem;
     }
   }
 }

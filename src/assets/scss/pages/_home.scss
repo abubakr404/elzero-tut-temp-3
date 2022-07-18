@@ -56,6 +56,30 @@
   }
 }
 
+@keyframes upDown {
+  0%,
+  100% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+}
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translate(50%, 0%);
+  }
+  40%,
+  60% {
+    transform: translate(50%, -60%);
+  }
+}
+
 section:not(.landing) {
   @extend %sectionPadding;
   @include in(toSmall) {
