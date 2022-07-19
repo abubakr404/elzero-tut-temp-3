@@ -33,6 +33,9 @@
 %aCenter {
   @include aCenter;
 }
+%fSpacer {
+  @include fSpacer;
+}
 %ulRest {
   @include ulRest;
 }
@@ -56,15 +59,8 @@
   }
 }
 
-@keyframes upDown {
-  0%,
-  100% {
-    transform: translateY(-10%);
-  }
-  50% {
-    transform: translateY(10%);
-  }
-}
+@include leftRight(20%, -20%);
+@include upDown(10%, -10%);
 @keyframes bouncing {
   0%,
   10%,
@@ -98,6 +94,7 @@ section:not(.landing) {
 @import "components";
 @import "../layout/header";
 @import "landing";
+@import "articles";
 @import "services";
 @import "portfolio";
 @import "about";

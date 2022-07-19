@@ -1,1 +1,40 @@
 // mixin fCenter is mixin for make the selector flex and make content center
+
+@mixin leftRight($end: 10%, $start: 0%) {
+  @keyframes leftRight {
+    0%,
+    100% {
+      transform: translateX($start);
+    }
+    50% {
+      transform: translateX($end);
+    }
+  }
+}
+@mixin upDown($end: 10%, $start: 0%) {
+  @keyframes upDown {
+    0%,
+    100% {
+      transform: translateY($start);
+    }
+    50% {
+      transform: translateY($end);
+    }
+  }
+}
+@mixin bouncing($end: 10%, $start: 0%) {
+  @keyframes bouncing {
+    0%,
+    10%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY($start);
+    }
+    40%,
+    60% {
+      transform: translateY($end);
+    }
+  }
+}

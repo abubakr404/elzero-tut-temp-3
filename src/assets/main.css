@@ -82,16 +82,6 @@ h2,
 h3,
 h4,
 h5,
-h6,
-button {
-  text-transform: uppercase;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
 h6 {
   color: var(--headings-color);
 }
@@ -109,12 +99,12 @@ a {
   color: inherit;
 }
 
-.bullet li, header nav > ul > li > a, header nav > ul > li > a:after, header .magaMenu, header .magaMenu a:after, .portfolio .shuffle li, .portfolio .images-container .box::after, .portfolio .images-container img, .portfolio .images-container .caption, .skills .our-skills .prog:before, .skills .our-skills .prog span, .pricing a {
+.special-head, .special-head::after, .special-head::before, .article-card, header nav > ul > li > a, header nav > ul > li > a:after, header .magaMenu, header .magaMenu a:after, .portfolio .shuffle li, .portfolio .images-container .box::after, .portfolio .images-container img, .portfolio .images-container .caption, .skills .our-skills .prog:before, .skills .our-skills .prog span, .pricing a {
   -webkit-transition: var(--main-transition);
   transition: var(--main-transition);
 }
 
-header .logo, header .magaMenu a {
+.article-card .more, header .logo, header .magaMenu a {
   font-weight: bold;
 }
 
@@ -129,14 +119,13 @@ section:not(.landing), .services .serv-container, .desgin {
   }
 }
 
-.main-heading h2::before,
-.head h2::before, .bullet, .landing .container > a {
+.landing .container > a {
   right: 50%;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
 }
 
-.desgin .text, .portfolio .video .text, .subscribe button {
+.desgin .text, .portfolio .video .text, .special-head::after, .special-head::before, .subscribe button {
   bottom: 50%;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
@@ -154,8 +143,7 @@ section:not(.landing), .services .serv-container, .desgin {
           justify-content: center;
 }
 
-.main-heading h2::after,
-.head h2::after, .portfolio .images-container .box::after, footer .social::before {
+.portfolio .images-container .box::after, footer .social::before {
   position: absolute;
   right: 50%;
   bottom: 50%;
@@ -163,7 +151,23 @@ section:not(.landing), .services .serv-container, .desgin {
           transform: translate(50%, 50%);
 }
 
-ul, .bullet, header nav > ul, .desgin .text ul, .portfolio .shuffle, .plans ul, footer ul {
+.article-card .more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ul, header nav > ul, .desgin .text ul, .portfolio .shuffle, .plans ul, footer ul {
   list-style: none;
   padding: 0;
 }
@@ -206,9 +210,32 @@ button {
   }
 }
 
+@-webkit-keyframes leftRight {
+  0%,
+    100% {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  50% {
+    -webkit-transform: translateX(20%);
+            transform: translateX(20%);
+  }
+}
+
+@keyframes leftRight {
+  0%,
+    100% {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  50% {
+    -webkit-transform: translateX(20%);
+            transform: translateX(20%);
+  }
+}
 @-webkit-keyframes upDown {
   0%,
-  100% {
+    100% {
     -webkit-transform: translateY(-10%);
             transform: translateY(-10%);
   }
@@ -217,10 +244,9 @@ button {
             transform: translateY(10%);
   }
 }
-
 @keyframes upDown {
   0%,
-  100% {
+    100% {
     -webkit-transform: translateY(-10%);
             transform: translateY(-10%);
   }
@@ -276,98 +302,92 @@ button {
   color: #1787e0;
 }
 
-.main-heading,
-.head {
-  text-align: center;
-  max-width: 28rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-.main-heading h2,
-.head h2 {
-  font-weight: 400;
-  letter-spacing: 0.1875rem;
-  color: #2196f3;
-  padding-bottom: 2rem;
+.special-head {
+  text-transform: uppercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 5rem;
+  border: 0.125rem solid var(--headings-color);
   position: relative;
+  z-index: 1;
+  padding: 0.625rem 1.25rem;
+  font-size: 1.875rem;
+  cursor: default;
 }
-.main-heading h2::before,
-.head h2::before {
-  content: "";
-  position: absolute;
-  background-color: #2196f3;
-  bottom: 0px;
-  right: 0px;
-  height: 0.0625rem;
-  width: calc(7rem - 0px);
-  right: 50%;
+.special-head:hover {
+  border-color: #ffffff;
+  color: #ffffff;
 }
-.main-heading h2::after,
-.head h2::after {
-  content: "";
-  position: absolute;
-  width: 0.875rem;
-  height: 0.875rem;
-  border-radius: 50%;
-  border: 0.0625rem solid #2196f3;
-  background-color: #1787e0;
+.special-head:hover::before {
+  left: 0;
+}
+.special-head:hover::after {
+  right: 0;
+}
+.special-head:hover::after, .special-head:hover::before {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   bottom: 0;
+  height: 100%;
+  width: 50%;
+  border-radius: 0;
 }
-.main-heading p,
-.head p {
-  font-weight: 300;
-  margin: 1.75rem auto;
-  padding: 0 2rem;
-  width: 30rem;
-  max-width: 100%;
-}
-
-.bullet {
-  z-index: 2;
+.special-head::after, .special-head::before {
+  content: "";
   position: absolute;
-  bottom: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.5rem;
-}
-.bullet li {
-  width: 0.9375rem;
-  height: 0.9375rem;
+  z-index: -1;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
-  border: 0.0625rem solid #1787e0;
-  background-color: transparent;
-  cursor: pointer;
+  border: 0 solid transparent;
+  background-color: var(--main-color);
 }
-.bullet li.active {
-  background-color: #2196f3;
-  border-color: #2196f3;
+.special-head::after {
+  right: -2rem;
+}
+.special-head::before {
+  left: -2rem;
 }
 
-.serv {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 5.3125rem;
+.article-card {
+  border-radius: 0.3125rem;
+  -webkit-box-shadow: 0 0.125rem 1rem 0 rgba(31, 32, 33, 0.1);
+          box-shadow: 0 0.125rem 1rem 0 rgba(31, 32, 33, 0.1);
 }
-@media (max-width: 991px) {
-  .serv {
-    gap: 2rem;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-align: center;
-  }
+.article-card:hover {
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
+  -webkit-box-shadow: 0 0.125rem 0.625rem 0.3125rem rgba(31, 32, 33, 0.1);
+          box-shadow: 0 0.125rem 0.625rem 0.3125rem rgba(31, 32, 33, 0.1);
 }
-.serv h3 {
-  margin-bottom: 1rem;
+.article-card:hover .more i {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
-.serv p {
-  padding-right: 1.25rem;
+.article-card img {
+  border-radius: 0.3125rem 0.3125rem 0 0;
+}
+.article-card .more,
+.article-card .content {
+  padding: 1.25rem;
+}
+.article-card .content {
+  border-bottom: 0.0625rem solid var(--section-background);
+}
+.article-card .content h3 {
+  margin-bottom: 0.625rem;
+}
+.article-card .content p {
+  line-height: 1.5;
+}
+.article-card .more {
+  color: var(--main-color);
+  border-radius: 0 0 0.3125rem 0.3125rem;
+}
+.article-card .more i {
+  -webkit-animation: leftRight 0.5s linear infinite alternate paused;
+          animation: leftRight 0.5s linear infinite alternate paused;
 }
 
 header {
@@ -397,7 +417,6 @@ header .container {
   }
 }
 header .logo {
-  text-transform: none;
   font-size: 1.625rem;
   color: var(--main-color);
 }
@@ -567,7 +586,6 @@ header .magaMenu li:not(:last-of-type) a {
           animation: bouncing 1.5s infinite;
 }
 .landing h1 {
-  text-transform: none;
   font-size: 2.5rem;
   letter-spacing: -0.125rem;
 }
@@ -586,6 +604,12 @@ header .magaMenu li:not(:last-of-type) a {
   .landing p {
     font-size: 1rem;
   }
+}
+
+.Articles .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
+  gap: 2.5rem;
 }
 
 .services .serv-container {

@@ -1,0 +1,5 @@
+.Articles {
+  .container {
+    @include responGridCol(15.625rem, 2.5rem);
+  }
+}
