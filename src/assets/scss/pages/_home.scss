@@ -58,6 +58,12 @@
     justify-content: center;
   }
 }
+%spikesTop {
+  @include spikes(var(--background-color), 2rem);
+}
+%spikesBottom {
+  @include spikes(var(--background-color), 2rem, 100%, bottom);
+}
 
 @include leftRight(20%, -20%);
 @include upDown(10%, -10%);
@@ -95,6 +101,7 @@ section:not(.landing) {
 @import "../layout/header";
 @import "landing";
 @import "articles";
+@import "gallery";
 @import "services";
 @import "portfolio";
 @import "about";

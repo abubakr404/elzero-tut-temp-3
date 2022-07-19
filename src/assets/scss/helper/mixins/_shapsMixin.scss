@@ -1,3 +1,45 @@
+// spikes mixin is mixin can make group of triangle like spikes and its fully control
+// the first @param $color should be the color of spikes
+// the second @param $height should be the height of the spikes
+// the third @param $width should be the width of the spikes
+// the fourth @param $direction should be the direction of spikes
+@mixin spikes($color: black, $height: 1rem, $width: 100%, $direction: top) {
+  $size: $height;
+  $angle: 45;
+  $degOne: $angle * 3 + deg;
+  $degTwo: $angle * 5 + deg;
+  @if $direction == top {
+    top: 0;
+  }
+  @if $direction == bottom {
+    $degOne: $angle * 1 + deg;
+    $degTwo: $angle * 7 + deg;
+    bottom: 0;
+  }
+  @if $direction == left or $direction == right {
+    $size: $width;
+    top: 0;
+  }
+  @if $direction == left {
+    $degOne: $angle * 3 + deg;
+    $degTwo: $angle * 1 + deg;
+    left: 0;
+  }
+  @if $direction == right {
+    $degOne: $angle * 7 + deg;
+    $degTwo: $angle * 5 + deg;
+    right: 0;
+  }
+  background: {
+    image: linear-gradient($degOne, $color 25%, transparent 25%),
+      linear-gradient($degTwo, $color 25%, transparent 25%);
+    size: $size $size;
+    repeat: repeat;
+  }
+  height: $height;
+  width: $width;
+}
+
 // circle mixin is genral mixin can make circle with all size and fill in or out
 // the first @param $volume should be the size of circle
 // the second @param $borderSize should be the border size of circle

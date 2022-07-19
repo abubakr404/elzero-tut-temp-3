@@ -72,8 +72,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-button {
+h6, button {
   font-family: var(--main-font);
 }
 
@@ -99,7 +98,7 @@ a {
   color: inherit;
 }
 
-.special-head, .special-head::after, .special-head::before, .article-card, header nav > ul > li > a, header nav > ul > li > a:after, header .magaMenu, header .magaMenu a:after, .portfolio .shuffle li, .portfolio .images-container .box::after, .portfolio .images-container img, .portfolio .images-container .caption, .skills .our-skills .prog:before, .skills .our-skills .prog span, .pricing a {
+.special-head, .special-head::after, .special-head::before, .article-card, header nav > ul > li > a, header nav > ul > li > a:after, header .magaMenu, header .magaMenu a:after, .Gallery .imgBox:hover::after, .Gallery .imgBox img, .portfolio .shuffle li, .portfolio .images-container .box::after, .portfolio .images-container img, .portfolio .images-container .caption, .skills .our-skills .prog:before, .skills .our-skills .prog span, .pricing a {
   -webkit-transition: var(--main-transition);
   transition: var(--main-transition);
 }
@@ -143,7 +142,7 @@ section:not(.landing), .services .serv-container, .desgin {
           justify-content: center;
 }
 
-.portfolio .images-container .box::after, footer .social::before {
+.Gallery .imgBox::after, .portfolio .images-container .box::after, footer .social::before {
   position: absolute;
   right: 50%;
   bottom: 50%;
@@ -208,6 +207,24 @@ button {
         -ms-flex-pack: center;
             justify-content: center;
   }
+}
+
+.Gallery::before {
+  top: 0;
+  background-image: linear-gradient(135deg, var(--background-color) 25%, transparent 25%), linear-gradient(225deg, var(--background-color) 25%, transparent 25%);
+  background-size: 2rem 2rem;
+  background-repeat: repeat;
+  height: 2rem;
+  width: 100%;
+}
+
+.Gallery::after {
+  bottom: 0;
+  background-image: linear-gradient(45deg, var(--background-color) 25%, transparent 25%), linear-gradient(315deg, var(--background-color) 25%, transparent 25%);
+  background-size: 2rem 2rem;
+  background-repeat: repeat;
+  height: 2rem;
+  width: 100%;
 }
 
 @-webkit-keyframes leftRight {
@@ -326,9 +343,6 @@ button {
   right: 0;
 }
 .special-head:hover::after, .special-head:hover::before {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  bottom: 0;
   height: 100%;
   width: 50%;
   border-radius: 0;
@@ -610,6 +624,49 @@ header .magaMenu li:not(:last-of-type) a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
   gap: 2.5rem;
+}
+
+.Gallery {
+  background-color: var(--section-background);
+  position: relative;
+}
+.Gallery::after {
+  content: "";
+  position: absolute;
+}
+.Gallery::before {
+  content: "";
+  position: absolute;
+}
+.Gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+  gap: 2.5rem;
+}
+.Gallery .imgBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  border: 0.9375rem solid var(--background-color);
+  position: relative;
+}
+.Gallery .imgBox::after {
+  content: "";
+  width: 0%;
+  height: 0%;
+  background-color: #ffffff86;
+}
+.Gallery .imgBox:hover::after {
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff00;
+}
+.Gallery .imgBox:hover img {
+  -webkit-transform: rotate(5deg) scale(1.1);
+          transform: rotate(5deg) scale(1.1);
 }
 
 .services .serv-container {

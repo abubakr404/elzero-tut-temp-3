@@ -60,20 +60,13 @@ h2,
 h3,
 h4,
 h5,
-h6,
-button {
-  @extend %font;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
 h6 {
   color: var(--headings-color);
+  @extend %font;
 }
 button {
   @extend %buttonRest;
+  @extend %font;
   cursor: pointer;
 }
 img {
