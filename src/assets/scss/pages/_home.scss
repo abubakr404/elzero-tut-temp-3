@@ -21,6 +21,9 @@
 %twoColG {
   @include twoColG;
 }
+%fColC {
+  @include fCol(center);
+}
 %hPCenter {
   @include hPCenter;
 }
@@ -102,6 +105,7 @@ section:not(.landing) {
 @import "landing";
 @import "articles";
 @import "gallery";
+@import "features";
 @import "services";
 @import "portfolio";
 @import "about";

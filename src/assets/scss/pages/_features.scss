@@ -1,0 +1,103 @@
+.Features {
+  position: relative;
+  .container {
+    @include responGridCol(18.75rem, 2.5rem);
+  }
+  .imgBox {
+    @extend %fColC;
+    overflow: hidden;
+    border: 0.0625rem solid var(--section-background);
+    position: relative;
+    &:hover {
+      .image::after {
+        border-width: 0rem 28rem 9rem 0rem;
+      }
+      a {
+        color: $white !important;
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+    .content {
+      @extend %fColC;
+      text-align: center;
+      line-height: 2;
+      padding: 1rem;
+    }
+    a {
+      @extend %transition;
+      position: relative;
+      padding: 0.625rem 1.875rem;
+      border: 0.1875rem solid;
+      margin-bottom: 1.875rem;
+      border-radius: 0.3125rem;
+      font-size: 1.375rem;
+      font-weight: bold;
+      &:before {
+        @extend %transition;
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background-color: var(--headings-color);
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+    h3 {
+      position: relative;
+      font-size: 2.5rem;
+      &::after {
+        @include line($mainColor, 0.3125rem, bottom, 100%, 30%, 0);
+      }
+    }
+    .image {
+      @extend %fCenter;
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: "";
+        @include overlay;
+      }
+      &::after {
+        @extend %transition;
+        content: "";
+        position: absolute;
+        border-style: solid;
+        border-width: 0 0rem 10.5rem 28rem;
+        border-color: transparent transparent var(--background-color);
+        bottom: 0;
+        right: 0;
+      }
+    }
+    @each $color, $index in $listColor {
+      &:nth-of-type(#{$index}) {
+        .image::before {
+          background-color: rgba($color, 0.6);
+        }
+        h3::after {
+          background-color: $color;
+        }
+        a {
+          color: $color;
+          border-color: $color;
+          &:before {
+            background-color: $color;
+          }
+        }
+      }
+    }
+    p {
+      font-size: 1.25rem;
+      margin: {
+        top: 2rem;
+        bottom: 2rem;
+      }
+    }
+    img {
+      @extend %transition;
+    }
+  }
+}
