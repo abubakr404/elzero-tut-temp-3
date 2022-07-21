@@ -2,4 +2,74 @@
   .container {
     @include responGridCol(18.75rem, 2.5rem);
   }
+  .top {
+    @include fCenter(center, flex-end);
+    padding-top: $boxSpeaser;
+    background-color: #f3f3f3;
+    width: calc(100% - #{$boxSpeaser});
+    margin-left: auto;
+    border-radius: $boxBorder $boxBorder 0 0;
+    position: relative;
+    img {
+      @extend %transition;
+      border-radius: $boxBorder;
+      position: relative;
+    }
+  }
+  .social {
+    position: relative;
+    @include fCenter;
+    flex-direction: column;
+    gap: 2rem;
+    min-width: 4rem;
+    a {
+      @extend %transition;
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+  }
+  .top::before,
+  .content::before {
+    @extend %transition;
+    content: "";
+    @include overlay(#3f4b56, 0.1, 0%);
+    z-index: 0;
+    border-radius: $boxBorder $boxBorder 0 0;
+  }
+  .content {
+    position: relative;
+    background-color: #f3f3f3;
+    padding: 1rem;
+    margin-left: $boxSpeaser;
+    border-radius: 0 0 $boxBorder $boxBorder;
+    &::before {
+      border-radius: 0 0 $boxBorder $boxBorder;
+    }
+  }
+  h3 {
+    @extend %transition;
+    position: relative;
+    color: var(--main-color);
+    font-size: 22px;
+  }
+  p {
+    position: relative;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+  .member-box {
+    &:hover {
+      img {
+        filter: grayscale(100%);
+      }
+      .top::before,
+      .content::before {
+        width: 100%;
+      }
+      h3 {
+        color: #777;
+      }
+    }
+  }
 }
