@@ -1,4 +1,5 @@
-.pricing {
+.Pricing {
+  @extend %sectionBackground;
   .main-heading p {
     margin-bottom: 0;
   }

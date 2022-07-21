@@ -1,9 +1,9 @@
 // mixin fCenter is mixin for make the selector flex and make content center
 
-@mixin fCenter {
+@mixin fCenter($align: center, $justify: center) {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: $align;
+  justify-content: $justify;
 }
 
 // mixin aCenter is mixin for make the selector in center of the screen by use position absolute

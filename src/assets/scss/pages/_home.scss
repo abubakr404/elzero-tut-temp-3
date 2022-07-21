@@ -6,6 +6,9 @@
   font-weight: bold;
 }
 
+%sectionBackground {
+  background-color: var(--section-background);
+}
 %sectionPadding {
   padding: {
     top: var(--main-padding-top);
@@ -106,9 +109,14 @@ section:not(.landing) {
 @import "articles";
 @import "gallery";
 @import "features";
+@import "testimonials";
+@import "team";
 @import "services";
-@import "portfolio";
-@import "about";
+@import "skills";
+@import "work-steps";
+@import "events";
 @import "pricing";
-@import "contact";
+@import "videos";
+@import "stats";
+@import "discount";
 @import "../layout/footer";

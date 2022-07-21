@@ -1,0 +1,5 @@
+.Stats {
+  .container {
+    @include responGridCol(15rem, 2.5rem);
+  }
+}

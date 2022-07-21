@@ -1,6 +1,6 @@
 .Gallery {
-  background-color: var(--section-background);
   position: relative;
+  @extend %sectionBackground;
   &::after {
     content: "";
     position: absolute;

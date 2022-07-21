@@ -1,9 +1,7 @@
 .landing {
   position: relative;
   height: calc(100vh - var(--header-height));
-  background: {
-    color: var(--section-background);
-  }
+  @extend %sectionBackground;
   &::after {
     content: "";
     position: absolute;
@@ -15,9 +13,8 @@
     bottom: 0;
   }
   .container {
-    display: grid;
+    @extend %twoColG;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
     padding-bottom: 7.5rem;
     height: 100%;
     > img {

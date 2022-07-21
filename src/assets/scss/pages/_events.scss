@@ -1,5 +1,4 @@
 .Services {
-  @extend %sectionBackground;
   .container {
     @include responGridCol(18.75rem, 2.5rem);
   }

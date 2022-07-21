@@ -9,6 +9,7 @@ footer {
     @extend %overlay;
   }
   .container {
+    @include responGridCol(12rem, 2.5rem);
     padding: 5rem;
     position: relative;
   }

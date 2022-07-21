@@ -3,7 +3,7 @@
   .container {
     @include responGridCol(18.75rem, 2.5rem);
   }
-  .imgBox {
+  .feature {
     @extend %fColC;
     overflow: hidden;
     border: 0.0625rem solid var(--section-background);
@@ -95,9 +95,6 @@
         top: 2rem;
         bottom: 2rem;
       }
-    }
-    img {
-      @extend %transition;
     }
   }
 }

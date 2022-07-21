@@ -1,0 +1,5 @@
+.Video {
+  .container {
+    @include responGridCol(28.75rem, 2.5rem);
+  }
+}
