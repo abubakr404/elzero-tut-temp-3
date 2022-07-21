@@ -99,12 +99,12 @@ a {
 }
 
 .special-head, .special-head::after, .special-head::before, .article-card, header nav > ul > li > a, header nav > ul > li > a:after, header .magaMenu, header .magaMenu a:after, .Gallery .imgBox:hover::after, .Gallery .imgBox img, .Features .feature a, .Features .feature a:before, .Features .feature .image::after, .Team .top img, .Team .social a, .Team .top::before,
-.Team .content::before, .Team h3, .Pricing a {
+.Team .content::before, .Team h3, .Services .service-box, .Services .service-box::before, .Pricing a {
   -webkit-transition: var(--main-transition);
   transition: var(--main-transition);
 }
 
-.article-card .more, header .logo, header .magaMenu a, .Testimonials .filled {
+.article-card .more, header .logo, header .magaMenu a, .Testimonials .filled, .Services .info::before {
   font-weight: bold;
 }
 
@@ -154,7 +154,7 @@ section:not(.landing) {
           transform: translateY(50%);
 }
 
-.buttons, header .logo, header nav > ul > li > a, header .magaMenu a, .Features .feature .image, .subscribe form::before, footer .social, footer ul {
+.buttons, header .logo, header nav > ul > li > a, header .magaMenu a, .Features .feature .image, .Team .social, .Services .service, .Services .info::before, .subscribe form::before, footer .social, footer ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,7 +212,12 @@ button {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.Gallery::before {
+.article-card, .Services .service-box {
+  -webkit-box-shadow: 0 0.125rem 1rem 0 rgba(31, 32, 33, 0.1);
+          box-shadow: 0 0.125rem 1rem 0 rgba(31, 32, 33, 0.1);
+}
+
+.Gallery::before, .Services::before {
   top: 0;
   background-image: linear-gradient(135deg, var(--background-color) 25%, transparent 25%), linear-gradient(225deg, var(--background-color) 25%, transparent 25%);
   background-size: 2rem 2rem;
@@ -369,8 +374,6 @@ button {
 
 .article-card {
   border-radius: 0.3125rem;
-  -webkit-box-shadow: 0 0.125rem 1rem 0 rgba(31, 32, 33, 0.1);
-          box-shadow: 0 0.125rem 1rem 0 rgba(31, 32, 33, 0.1);
 }
 .article-card:hover {
   -webkit-transform: translateY(-1rem);
@@ -871,15 +874,6 @@ header .magaMenu li:not(:last-of-type) a {
 }
 .Team .social {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -934,10 +928,95 @@ header .magaMenu li:not(:last-of-type) a {
   color: #777;
 }
 
+.Services {
+  position: relative;
+}
+.Services::before {
+  content: "";
+  position: absolute;
+}
 .Services .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
   gap: 2.5rem;
+}
+.Services .service-box {
+  background-color: var(--background-color);
+  color: var(--main-color);
+  position: relative;
+}
+.Services .service-box::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  top: 0;
+  right: 50%;
+  height: 0.25rem;
+  width: calc(0% - 100%);
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+.Services .service-box:hover {
+  -webkit-transform: translateY(-5%);
+          transform: translateY(-5%);
+}
+.Services .service-box:hover::before {
+  width: 100%;
+}
+.Services .service {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+  gap: 1rem;
+}
+.Services .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0.9375rem;
+  background-color: #f9f9f9;
+  position: relative;
+}
+.Services .info a::before {
+  content: "";
+  position: absolute;
+  left: 5rem;
+  top: 0;
+  border-style: solid;
+  border-width: 3rem 1rem 0rem 1.5rem;
+  border-color: #d5d5d5 transparent transparent #d5d5d5;
+}
+.Services .info::before {
+  content: attr(data-number);
+  position: absolute;
+  background-color: var(--main-color);
+  color: #f9f9f9;
+  left: 0;
+  top: 0;
+  width: 4rem;
+  height: 100%;
+  font-size: 1.5rem;
+}
+.Services .info::after {
+  content: "";
+  position: absolute;
+  left: 4rem;
+  top: 0;
+  border-style: solid;
+  border-width: 3rem 1rem 0rem 0rem;
+  border-color: var(--main-color) #d5d5d5 #d5d5d5 var(--main-color);
+}
+.Services h3 {
+  color: inherit;
+  font-size: 1.5625rem;
+}
+.Services i {
+  color: #d5d5d5;
 }
 
 .Services .container {

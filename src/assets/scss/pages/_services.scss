@@ -1,6 +1,83 @@
 .Services {
   @extend %sectionBackground;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    @extend %spikesTop;
+  }
   .container {
     @include responGridCol(18.75rem, 2.5rem);
+  }
+  .service-box {
+    @extend %mainBoxShadow;
+    @extend %transition;
+    background-color: var(--background-color);
+    color: var(--main-color);
+    position: relative;
+    &::before {
+      @extend %transition;
+      @include line(var(--main-color), 0.25rem, top, 0%, 100%, 0);
+      transform: translateX(50%);
+    }
+    &:hover {
+      transform: translateY(-5%);
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+  .service {
+    @extend %fCenter;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+  }
+  .info {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.9375rem;
+    background-color: #f9f9f9;
+    position: relative;
+    a {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 5rem;
+        top: 0;
+        border-style: solid;
+        border-width: 3rem 1rem 0rem 1.5rem;
+        border-color: #d5d5d5 transparent transparent #d5d5d5;
+      }
+    }
+    &::before {
+      @extend %fCenter;
+      @extend %bold;
+      content: attr(data-number);
+      position: absolute;
+      background-color: var(--main-color);
+      color: #f9f9f9;
+      left: 0;
+      top: 0;
+      width: 4rem;
+      height: 100%;
+      font-size: 1.5rem;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 4rem;
+      top: 0;
+      border-style: solid;
+      border-width: 3rem 1rem 0rem 0rem;
+      border-color: var(--main-color) #d5d5d5 #d5d5d5 var(--main-color);
+    }
+  }
+  h3 {
+    color: inherit;
+    font-size: 1.5625rem;
+  }
+  i {
+    color: #d5d5d5;
   }
 }

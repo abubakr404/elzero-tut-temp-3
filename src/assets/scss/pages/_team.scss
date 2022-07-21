@@ -18,7 +18,7 @@
   }
   .social {
     position: relative;
-    @include fCenter;
+    @extend %fCenter;
     flex-direction: column;
     gap: 2rem;
     min-width: 4rem;
