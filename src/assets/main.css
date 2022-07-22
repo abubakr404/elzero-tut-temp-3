@@ -99,7 +99,7 @@ a {
 }
 
 .special-head, .special-head::after, .special-head::before, .article-card, header nav > ul > li > a, header nav > ul > li > a:after, header .magaMenu, header .magaMenu a:after, .Gallery .imgBox:hover::after, .Gallery .imgBox img, .Features .feature a, .Features .feature a:before, .Features .feature .image::after, .Team .top img, .Team .social a, .Team .top::before,
-.Team .content::before, .Team h3, .Services .service-box, .Services .service-box::before, .Pricing a {
+.Team .content::before, .Team h3, .Services .service-box, .Services .service-box::before, .Skills .skills-box .the-prog span.prog, .Work-Steps .step-box::before, .Pricing a {
   -webkit-transition: var(--main-transition);
   transition: var(--main-transition);
 }
@@ -166,7 +166,7 @@ section:not(.landing) {
           justify-content: center;
 }
 
-.Gallery .imgBox::after, footer .social::before {
+.Gallery .imgBox::after, .Work-Steps .step-box::before, footer .social::before {
   position: absolute;
   right: 50%;
   bottom: 50%;
@@ -174,7 +174,7 @@ section:not(.landing) {
           transform: translate(50%, 50%);
 }
 
-.article-card .more {
+.article-card .more, .Skills .skills-box h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1017,6 +1017,73 @@ header .magaMenu li:not(:last-of-type) a {
 }
 .Services i {
   color: #d5d5d5;
+}
+
+.Skills .skills-box h3 {
+  margin-bottom: 1rem;
+}
+.Skills .skills-box h3 span {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  background-color: var(--background-color);
+  color: var(--main-color);
+  border: 0.0625rem solid var(--section-background);
+  border-radius: 0.25rem;
+}
+.Skills .skills-box .the-prog {
+  height: 1.625rem;
+  background-color: #eee;
+  margin: 0.25rem 0 1.5rem;
+}
+.Skills .skills-box .the-prog span.prog {
+  background-color: var(--main-color);
+  display: block;
+  height: 100%;
+}
+
+.Work-Steps .steps-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  padding-left: 3rem;
+}
+.Work-Steps .step-box {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  background-color: #f6f5f5;
+  border: 0.125rem solid white;
+  padding: 1.875rem;
+  border-radius: 0.25rem;
+  gap: 1.875rem;
+  line-height: 1.5;
+  font-size: 1.125rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Work-Steps .step-box::before {
+  content: "";
+  width: 0%;
+  height: 0%;
+  z-index: 0;
+  background-color: #ededed;
+}
+.Work-Steps .step-box:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.Work-Steps .step-box,
+.Work-Steps .step-box img,
+.Work-Steps .step-box .content {
+  position: relative;
+}
+.Work-Steps h3 {
+  margin-bottom: 0.5rem;
 }
 
 .Services .container {
