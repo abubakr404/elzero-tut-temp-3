@@ -45,12 +45,17 @@ mixin downCount(counterTitles = ["Day", "Hour", "Minute", "Second"])
 mixin plans(plans, currency, every, planIcon)
   .plans
     each plan in plans
-      .plan
-        .head
+      -
+        let specialClass = plan.special.isSpecial ? "special-plan" : false,
+        specialTitle = plan.special.isSpecial ? plan.special.title: false;
+      .plan(class= specialClass)
+        if plan.special.isSpecial
+          .special-plan-title= specialTitle
+        .plan-head
           h3=plan.head.title
           img(src=imgsPath + plan.head.img, alt="")
-          span.price(data-currency=currency data-every=every)
-        ul.features
+          span.price(data-currency=currency data-every=every)= plan.head.price
+        ul.plan-features
             each feature in plan.features
-              li(data-icon = planIcon)=feature
-        .footer: a(href=plan.footer.link)=plan.footer.title 
+              li(style= `--icon: ${planIcon};`)=feature
+        .plan-footer: a(href=plan.footer.link)=plan.footer.title 

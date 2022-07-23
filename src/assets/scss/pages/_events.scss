@@ -1,5 +1,80 @@
-.Services {
+.Events {
+  position: relative;
+  > img {
+    @extend %dotedBackground;
+  }
   .container {
-    @include responGridCol(18.75rem, 2.5rem);
+    position: relative;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 5rem 1rem;
+  }
+  .event {
+    @extend %fCenter;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .down-count {
+    display: flex;
+    gap: 1rem;
+  }
+  .count-box {
+    @extend %transition;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.3125rem;
+    min-width: 4.625rem;
+    &:hover {
+      &,
+      .number {
+        border-color: var(--main-color);
+      }
+    }
+  }
+  .number {
+    @extend %transition;
+    padding: 1rem;
+    color: var(--main-color);
+    border-bottom: 0.0625rem solid #ccc;
+    font-size: 2rem;
+    @extend %bold;
+  }
+  .title {
+    padding: 0.5rem;
+  }
+  .content {
+    font-size: 1.1875rem;
+    line-height: 1.5;
+    h3 {
+      font-size: 1.875rem;
+      margin-bottom: 1rem;
+    }
+  }
+  form {
+    background-color: #f6f5f5;
+    display: flex;
+    gap: 1rem;
+    grid-column: 1/3;
+    padding: 2rem;
+    margin: auto;
+    border-radius: 3rem;
+    font-size: 1rem;
+    input[type="text"] {
+      padding: 1rem;
+      border-radius: 2rem;
+      border: none;
+      width: 26rem;
+      font-size: inherit;
+    }
+    input[type="submit"] {
+      font-size: inherit;
+      color: var(--background-color);
+      background-color: var(--main-color);
+      border: none;
+      font-weight: bold;
+      padding: 1.25rem;
+      border-radius: 2rem;
+      cursor: pointer;
+    }
   }
 }

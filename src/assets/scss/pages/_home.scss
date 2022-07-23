@@ -5,6 +5,10 @@
 %bold {
   font-weight: bold;
 }
+%z1 {
+  position: relative;
+  z-index: 1;
+}
 
 %sectionBackground {
   background-color: var(--section-background);
@@ -53,6 +57,20 @@
 }
 %mainBoxShadow {
   box-shadow: 0 0.125rem 1rem 0 rgba($headingsColor, 0.1);
+}
+%dotedBackground {
+  position: absolute;
+  z-index: 0;
+  &:first-of-type {
+    transform: translateY(100%);
+    top: 0;
+    right: 0;
+  }
+  &:last-of-type {
+    transform: translateY(-100%);
+    bottom: 0;
+    left: 0;
+  }
 }
 %boxCard {
   position: absolute;
@@ -103,8 +121,8 @@ section:not(.landing) {
 }
 
 %primaryButton {
-  background-color: $mainColor;
-  color: $altColor;
+  background-color: var(--main-color);
+  color: var(--background-color);
 }
 @import "components";
 @import "../layout/header";
