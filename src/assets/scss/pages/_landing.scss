@@ -1,6 +1,6 @@
-.landing {
+.Landing {
   position: relative;
-  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
   @extend %sectionBackground;
   &::after {
     content: "";

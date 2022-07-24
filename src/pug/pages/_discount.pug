@@ -1,13 +1,18 @@
 section.Discount#Discount
   .discount-info
-    h2= Discount.info.title
-    p= Discount.info.text
-    img(src= imgsPath + Discount.info.imgName, alt="")
+    ul
+      each image in Discount.info.images
+        li(class=image.isActive ? "active" : "", style=`background-image: url(${imgsPath}${image.imgName});`)
+    .container
+      h2= Discount.info.title
+      p= Discount.info.text
+      img(src= imgsPath + Discount.info.imgName, alt="")
   .request-discount
-    h2= Discount.request.title
-    form.discount(method="get")
-      input(type="text" placeholder=Discount.request.pName)
-      input(type="email" placeholder=Discount.request.pEmail)
-      input(type="phone" placeholder=Discount.request.pPhone)
-      textarea(name="message" placeholder=Discount.request.pMessage)
-      input(type="submit" value=Discount.request.submit)
+    .container
+      h2= Discount.request.title
+      form.discount(method="get")
+        input(type="text" placeholder=Discount.request.pName)
+        input(type="email" placeholder=Discount.request.pEmail)
+        input(type="phone" placeholder=Discount.request.pPhone)
+        textarea(name="message" placeholder=Discount.request.pMessage)
+        input(type="submit" value=Discount.request.submit)

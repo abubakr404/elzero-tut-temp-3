@@ -42,7 +42,7 @@
       </div>
     </header>
     <main>
-      <section class="landing">
+      <section class="Landing">
         <div class="container">
           <div class="content">
             <h1>Welcome, To Elzero World</h1>
@@ -492,24 +492,32 @@
       </section>
       <section class="Discount" id="Discount">
         <div class="discount-info">
-          <h2>We Have A Discount</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi asperiores consectetur, recusandae ratione provident necessitatibus, cumque delectus commodi fuga praesentium beatae. Totam vel similique laborum dicta aperiam odit doloribus corporis.</p><img src="/src/assets/imgs/discount.png" alt="">
+          <ul>
+            <li class="active" style="background-image: url(/src/assets/imgs/discount-background1.jpg);"></li>
+            <li style="background-image: url(/src/assets/imgs/discount-background2.jpg);"></li>
+          </ul>
+          <div class="container">
+            <h2>We Have A Discount</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi asperiores consectetur, recusandae ratione provident necessitatibus, cumque delectus commodi fuga praesentium beatae. Totam vel similique laborum dicta aperiam odit doloribus corporis.</p><img src="/src/assets/imgs/discount.png" alt="">
+          </div>
         </div>
         <div class="request-discount">
-          <h2>Request A Discount</h2>
-          <form class="discount" method="get">
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <input type="phone" placeholder="Your Phone">
-            <textarea name="message" placeholder="Tell Us About Your Needs"></textarea>
-            <input type="submit" value="Send">
-          </form>
+          <div class="container">
+            <h2>Request A Discount</h2>
+            <form class="discount" method="get">
+              <input type="text" placeholder="Your Name">
+              <input type="email" placeholder="Your Email">
+              <input type="phone" placeholder="Your Phone">
+              <textarea name="message" placeholder="Tell Us About Your Needs"></textarea>
+              <input type="submit" value="Send">
+            </form>
+          </div>
         </div>
       </section>
     </main>
     <footer>
       <div class="container">
-        <div class="box">
+        <div class="info-box">
           <h3>Elzero</h3>
           <ul class="social">
             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -518,18 +526,18 @@
           </ul>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus nulla rem, dignissimos iste aspernatur</p>
         </div>
-        <div class="box">
+        <div class="link-box">
           <ul class="links">
-            <li><a href="#" data-icon="\F101">Important Link 1</a></li>
-            <li><a href="#" data-icon="\F101">Important Link 2</a></li>
-            <li><a href="#" data-icon="\F101">Important Link 3</a></li>
-            <li><a href="#" data-icon="\F101">Important Link 4</a></li>
-            <li><a href="#" data-icon="\F101">Important Link 5</a></li>
+            <li><a href="#" style="--icon: '\F101';">Important Link 1</a></li>
+            <li><a href="#" style="--icon: '\F101';">Important Link 2</a></li>
+            <li><a href="#" style="--icon: '\F101';">Important Link 3</a></li>
+            <li><a href="#" style="--icon: '\F101';">Important Link 4</a></li>
+            <li><a href="#" style="--icon: '\F101';">Important Link 5</a></li>
           </ul>
         </div>
-        <div class="box">
+        <div class="contact-box">
           <div class="info"><i class="fas fa-map-marker-alt fa-fw"></i>
-            <div class="text">Egypt, Giza, Inside The Sphinx, Room Number 220</div>
+            <address class="text">Egypt, Giza, Inside The Sphinx, Room Number 220</address>
           </div>
           <div class="info"><i class="far fa-clock fa-fw"></i>
             <div class="text">Business Hours: From 10:00 To 18:00</div>
@@ -539,10 +547,13 @@
             </div>
           </div>
         </div>
-        <div class="box">
+        <div class="images-box">
           <div class="images"><img src="/src/assets/imgs/gallery-01.png" alt=""><img src="/src/assets/imgs/gallery-02.png" alt=""><img src="/src/assets/imgs/gallery-03.jpg" alt=""><img src="/src/assets/imgs/gallery-04.png" alt=""><img src="/src/assets/imgs/gallery-05.jpg" alt=""><img src="/src/assets/imgs/gallery-06.png" alt="">
           </div>
         </div>
+      </div>
+      <div class="desgister">
+        <p>Made With &lt;3 By Abubakr</p>
       </div>
     </footer>
     <script src="js/main.js"> </script>

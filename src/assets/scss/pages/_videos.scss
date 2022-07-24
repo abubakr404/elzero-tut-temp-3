@@ -1,5 +1,51 @@
 .Video {
+  color: var(--headings-color);
   .container {
-    @include responGridCol(28.75rem, 2.5rem);
+    display: grid;
+    grid-template-columns: 18.75rem 1fr;
+  }
+  .video-list {
+    border: 0.0625rem solid #e2e2e2;
+    a,
+    .caption {
+      padding: 1.5rem 1.25rem;
+    }
+    .caption {
+      @extend %bold;
+      display: flex;
+      justify-content: space-between;
+      background-color: #f4f4f4;
+    }
+    li.active a,
+    a:focus,
+    a:hover {
+      color: var(--main-color);
+      background-color: #fafafa;
+    }
+    a {
+      @extend %transition;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      border-top: 0.0625rem solid #e2e2e2;
+    }
+    span.time {
+      color: var(--text-color);
+    }
+  }
+  .preview {
+    @extend %fSpacer;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #e2e2e2;
+    padding: 0.625rem;
+    img {
+      display: block;
+    }
+    .info {
+      margin-top: 0.625rem;
+      padding: 1.25rem;
+      background-color: var(--background-color);
+    }
   }
 }

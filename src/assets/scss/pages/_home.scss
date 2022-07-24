@@ -28,6 +28,9 @@
 %twoColG {
   @include twoColG;
 }
+%fCol {
+  @include fCol;
+}
 %fColC {
   @include fCol(center);
 }
@@ -39,6 +42,9 @@
 }
 %fCenter {
   @include fCenter;
+}
+%fCenterS {
+  @include fCenter(center, flex-start);
 }
 %aCenter {
   @include aCenter;
@@ -109,7 +115,7 @@
   }
 }
 
-section:not(.landing) {
+section:not(.Landing, .Discount) {
   @extend %sectionPadding;
   @include in(toSmall) {
     text-align: center;

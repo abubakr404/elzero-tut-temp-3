@@ -31,20 +31,20 @@ block mainContent
 
 block footerContent
   .container
-    .box
+    .info-box
       h3=myName
       ul.social
         each social in Footer.socialMedia
           li: a(href=social.link): i(class=social.icon)
       p= Footer.info
-    .box
+    .link-box
       ul.links
         each link in Footer.importantLinks
-          li: a(href=link.link data-icon= link.icon)=link.title
-    .box
+          li: a(href=link.link style= `--icon: ${link.icon};`)=link.title
+    .contact-box
       .info
         i(class= Footer.contacts.address.icon)
-        .text= Footer.contacts.address.text
+        address.text= Footer.contacts.address.text
       .info
         i(class= Footer.contacts.workTime.icon)
         .text= Footer.contacts.workTime.text
@@ -53,7 +53,9 @@ block footerContent
         .text
           each number in Footer.contacts.phones.numbers
             a(href="tel:" + number)= number
-    .box
+    .images-box
       .images
         each image in Footer.images
           img(src= imgsPath + image, alt="")
+  .desgister
+    p=`${Footer.desgister.message} ${Footer.desgister.icon} By ${Footer.desgister.name}`

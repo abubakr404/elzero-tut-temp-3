@@ -67,14 +67,17 @@
       font-size: inherit;
     }
     input[type="submit"] {
+      @extend %primaryButton;
+      @extend %transition;
+      @extend %bold;
       font-size: inherit;
-      color: var(--background-color);
-      background-color: var(--main-color);
       border: none;
-      font-weight: bold;
       padding: 1.25rem;
       border-radius: 2rem;
       cursor: pointer;
+      &:hover {
+        background-color: var(--alt-color);
+      }
     }
   }
 }
