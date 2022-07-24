@@ -237,15 +237,6 @@ button {
   background-color: transparent;
 }
 
-footer::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
 .plans .plan, .Services .service-box, .article-card {
   -webkit-box-shadow: 0 0.125rem 1rem 0 rgba(31, 32, 33, 0.1);
           box-shadow: 0 0.125rem 1rem 0 rgba(31, 32, 33, 0.1);
@@ -1084,6 +1075,7 @@ header .magaMenu li:not(:last-of-type) a {
   background-color: var(--main-color);
   display: block;
   height: 100%;
+  width: var(--width);
 }
 
 .Work-Steps .steps-box {
@@ -1578,18 +1570,13 @@ header .magaMenu li:not(:last-of-type) a {
 footer {
   background-color: #191919;
   color: #b9b9b9;
-  position: relative;
-}
-footer::before {
-  content: "";
-  position: absolute;
 }
 footer .container {
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12.625rem, 1fr));
   gap: 2.625rem;
-  padding: 4.5rem 0;
+  padding: 4.375rem 0 3.125rem;
   position: relative;
 }
 footer .info-box {
@@ -1603,7 +1590,7 @@ footer .info-box {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: 1.875rem;
+  gap: 1.25rem;
 }
 footer .info-box h3 {
   font-size: 3.125rem;

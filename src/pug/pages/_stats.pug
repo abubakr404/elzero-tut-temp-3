@@ -4,5 +4,5 @@ section.Stats#Stats
     each stat in Stats.statsList
       .stat
         i(class=stat.icon)
-        span.number= stat.number
+        span.number(data-goal=stat.number)= "0"
         span.title= stat.title

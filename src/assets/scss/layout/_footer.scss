@@ -1,23 +1,14 @@
 footer {
-  // padding: 2.25rem;
   background-color: #191919;
   color: #b9b9b9;
-  position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    @extend %overlay;
-  }
   .container {
     @include responGridCol(12.625rem, 2.625rem);
-    padding: 4.5rem 0;
+    padding: 4.375rem 0 3.125rem;
     position: relative;
   }
   .info-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.875rem;
+    @include fCol(start);
+    gap: 1.25rem;
     h3 {
       font-size: 3.125rem;
       color: var(--background-color);

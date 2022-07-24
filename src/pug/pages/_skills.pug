@@ -6,4 +6,4 @@ section.Skills#Skills
       each skill in ourSkills.Skills
         .skill-box
           h3 #{skill.title} #[span #{skill.progress}%]
-          .the-prog: span.prog(style = "width: 0%" data-width = skill.progress)
+          .the-prog: span.prog(style = "--width: 0%;" data-width = skill.progress)
