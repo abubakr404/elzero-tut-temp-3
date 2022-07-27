@@ -8,6 +8,9 @@
   }
   .container {
     @include responGridCol(18.75rem, 2.5rem);
+    @include in {
+      grid-template-columns: 1fr;
+    }
   }
   .service-box {
     @extend %mainBoxShadow;
@@ -39,38 +42,30 @@
     padding: 0.9375rem;
     background-color: #f9f9f9;
     position: relative;
-    a {
-      &::before {
-        content: "";
-        position: absolute;
-        left: 5rem;
-        top: 0;
-        border-style: solid;
-        border-width: 3rem 1rem 0rem 1.5rem;
-        border-color: #d5d5d5 transparent transparent #d5d5d5;
-      }
-    }
     &::before {
       @extend %fCenter;
       @extend %bold;
       content: attr(data-number);
-      position: absolute;
       background-color: var(--main-color);
+      position: absolute;
       color: #f9f9f9;
       left: 0;
       top: 0;
-      width: 4rem;
+      width: 5rem;
       height: 100%;
-      font-size: 1.5rem;
+      padding-right: 0.9375rem;
+      font-size: 1.875rem;
+      box-sizing: content-box;
     }
     &::after {
       content: "";
       position: absolute;
-      left: 4rem;
+      left: 5rem;
       top: 0;
-      border-style: solid;
-      border-width: 3rem 1rem 0rem 0rem;
-      border-color: var(--main-color) #d5d5d5 #d5d5d5 var(--main-color);
+      background-color: #d5d5d5;
+      width: 3.125rem;
+      height: 100%;
+      transform: skewX(-30deg);
     }
   }
   h3 {

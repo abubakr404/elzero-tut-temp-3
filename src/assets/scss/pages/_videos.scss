@@ -3,6 +3,10 @@
   .container {
     display: grid;
     grid-template-columns: 18.75rem 1fr;
+    @include in(toSmall) {
+      grid-template-columns: 1fr;
+      text-align: start;
+    }
   }
   .video-list {
     border: 0.0625rem solid #e2e2e2;

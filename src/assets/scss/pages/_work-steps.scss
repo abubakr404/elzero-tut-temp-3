@@ -2,6 +2,10 @@
   @extend %sectionBackground;
   .container {
     @extend %twoColG;
+    gap: 1rem;
+    @include in(toSmall) {
+      grid-template-columns: 1fr;
+    }
   }
   .steps-box {
     display: flex;
@@ -20,6 +24,15 @@
     line-height: 1.5;
     font-size: 1.125rem;
     align-items: center;
+    @include in(toSmall) {
+      justify-items: center;
+      grid-template-columns: 1fr;
+      gap: 0.875rem;
+      font-size: 0.875rem;
+      img {
+        max-width: 3.5rem;
+      }
+    }
     &::before {
       @extend %aCenter;
       @extend %transition;

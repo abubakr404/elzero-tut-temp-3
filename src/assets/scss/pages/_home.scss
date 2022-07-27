@@ -25,14 +25,23 @@
     }
   }
 }
+%oneColG {
+  @include oneColG;
+}
 %twoColG {
   @include twoColG;
 }
 %fCol {
   @include fCol;
 }
+%fColS {
+  @include fCol(start);
+}
 %fColC {
   @include fCol(center);
+}
+%fColE {
+  @include fCol(end);
 }
 %hPCenter {
   @include hPCenter;
@@ -40,11 +49,14 @@
 %vPCenter {
   @include vPCenter;
 }
+%fCenterS {
+  @include fCenter(center, flex-start);
+}
 %fCenter {
   @include fCenter;
 }
-%fCenterS {
-  @include fCenter(center, flex-start);
+%fCenterE {
+  @include fCenter(center, flex-end);
 }
 %aCenter {
   @include aCenter;
@@ -107,11 +119,11 @@
   50%,
   80%,
   100% {
-    transform: translate(50%, 0%);
+    transform: translateY(0%);
   }
   40%,
   60% {
-    transform: translate(50%, -60%);
+    transform: translateY(-60%);
   }
 }
 

@@ -2,6 +2,10 @@
   @extend %sectionBackground;
   .container {
     @include responGridCol(18.75rem, 2.5rem);
+    @include in {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
   .customer-box {
     position: relative;
@@ -16,6 +20,9 @@
     max-width: 5rem;
     border-radius: 50%;
     box-shadow: 0 0 0 0.625rem var(--section-background);
+    @include in {
+      max-width: 4rem;
+    }
     img {
       display: flex;
       border-radius: 50%;

@@ -1,14 +1,24 @@
 .Discount {
   @extend %twoColG;
+  @include in(toSmall) {
+    grid-template-columns: 1fr;
+  }
   text-align: center;
   min-height: 100vh;
   h2 {
     font-size: 2.5rem;
     letter-spacing: -0.125rem;
+    @include in {
+      font-size: 1.5rem;
+      letter-spacing: 0rem;
+    }
   }
   p {
     font-size: 1.125rem;
     line-height: 1.6;
+    @include in {
+      font-size: 0.875rem;
+    }
   }
   > div {
     @extend %fCenter;

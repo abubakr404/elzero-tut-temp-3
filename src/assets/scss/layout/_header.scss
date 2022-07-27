@@ -1,20 +1,18 @@
 header {
   position: relative;
-  box-shadow: 0 0 0.625rem #4a4a4a38;
+  @extend %mainBoxShadow;
   .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @extend %fSpacer;
     position: relative;
-    min-height: var(--header-height);
     @include in {
       flex-direction: column;
     }
   }
   .logo {
-    font-size: 1.625rem;
     @extend %fCenter;
     @extend %bold;
+    font-size: 1.625rem;
+    height: var(--header-height);
     color: var(--main-color);
     @include in {
       height: 3.125rem;
@@ -91,6 +89,9 @@ header {
       grid-template-columns: 1fr;
       gap: 0;
       padding: 0;
+      > ul:not(:last-of-type) li:last-of-type a {
+        border-bottom: 0.0625rem solid #e9e6e6;
+      }
     }
     &:after {
       @include line(var(--main-color), 0.1875rem);
@@ -100,12 +101,10 @@ header {
       min-width: 250px;
       display: flex;
       flex-direction: column;
-      // gap: 2rem;
     }
     a {
       @extend %bold;
-      @extend %fCenter;
-      justify-content: flex-start;
+      @extend %fCenterS;
       gap: 0.625rem;
       padding: 1rem;
       font-size: 1.125rem;
@@ -122,7 +121,6 @@ header {
           width: 100%;
         }
       }
-      // background-color: rgba($sectionBackground, 0.3);
     }
     li:not(:last-of-type) {
       a {

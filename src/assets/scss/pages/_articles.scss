@@ -2,4 +2,42 @@
   .container {
     @include responGridCol(15.625rem, 2.5rem);
   }
+  .article-card {
+    @extend %transition;
+    @extend %mainBoxShadow;
+    overflow: hidden;
+    border-radius: 0.3125rem;
+    &:hover {
+      transform: translateY(-1rem);
+      box-shadow: 0 0.125rem 0.625rem 0.3125rem rgba($headingsColor, 0.1);
+      .more i {
+        animation-play-state: running;
+      }
+    }
+    .more,
+    .content {
+      padding: 1.25rem;
+    }
+    .content {
+      border-bottom: 0.0625rem solid var(--section-background);
+      text-align: start;
+      @include in(smallMobile) {
+        text-align: center;
+      }
+      h3 {
+        margin-bottom: 0.625rem;
+      }
+      p {
+        line-height: 1.5;
+      }
+    }
+    .more {
+      @extend %bold;
+      @extend %fSpacer;
+      color: var(--main-color);
+      i {
+        animation: leftRight 0.5s linear infinite alternate paused;
+      }
+    }
+  }
 }

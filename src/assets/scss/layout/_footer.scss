@@ -3,11 +3,11 @@ footer {
   color: #b9b9b9;
   .container {
     @include responGridCol(12.625rem, 2.625rem);
-    padding: 4.375rem 0 3.125rem;
+    padding: 4.375rem 1rem 3.125rem;
     position: relative;
   }
   .info-box {
-    @include fCol(start);
+    @extend %fColS;
     gap: 1.25rem;
     h3 {
       font-size: 3.125rem;

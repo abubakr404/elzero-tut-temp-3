@@ -8,26 +8,25 @@
   $angle: 45;
   $degOne: $angle * 3 + deg;
   $degTwo: $angle * 5 + deg;
-  @if $direction == top {
-    top: 0;
-  }
+  left: 0;
+  top: 0;
   @if $direction == bottom {
     $degOne: $angle * 1 + deg;
     $degTwo: $angle * 7 + deg;
+    top: auto;
     bottom: 0;
   }
   @if $direction == left or $direction == right {
     $size: $width;
-    top: 0;
   }
   @if $direction == left {
     $degOne: $angle * 3 + deg;
     $degTwo: $angle * 1 + deg;
-    left: 0;
   }
   @if $direction == right {
     $degOne: $angle * 7 + deg;
     $degTwo: $angle * 5 + deg;
+    left: auto;
     right: 0;
   }
   background: {

@@ -36,9 +36,9 @@ mixin rateStars(rateNumber = 0, starsNumber = 5)
       -index++;
 
 mixin downCount(counterTitles = ["Day", "Hour", "Minute", "Second"])
-  .down-count
+  .time
     each title in counterTitles
-      .count-box
+      .unit
         .number 00
         .title=title
 

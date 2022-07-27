@@ -2,6 +2,9 @@
   position: relative;
   .container {
     @include responGridCol(18.75rem, 2.5rem);
+    @include in {
+      grid-template-columns: 1fr;
+    }
   }
   .feature {
     @extend %fColC;
@@ -11,6 +14,9 @@
     &:hover {
       .image::after {
         border-width: 0rem 28rem 9rem 0rem;
+        @include in {
+          border-width: 0rem 44rem 9rem 0rem;
+        }
       }
       a {
         color: $white !important;
@@ -27,13 +33,16 @@
     }
     a {
       @extend %transition;
+      @extend %bold;
       position: relative;
       padding: 0.625rem 1.875rem;
       border: 0.1875rem solid;
       margin-bottom: 1.875rem;
       border-radius: 0.3125rem;
       font-size: 1.375rem;
-      font-weight: bold;
+      @include in {
+        font-size: 1rem;
+      }
       &:before {
         @extend %transition;
         content: "";
@@ -49,6 +58,9 @@
     h3 {
       position: relative;
       font-size: 2.5rem;
+      @include in {
+        font-size: 2rem;
+      }
       &::after {
         @include line($mainColor, 0.3125rem, bottom, 100%, 30%, 0);
       }
@@ -68,8 +80,12 @@
         border-style: solid;
         border-width: 0 0rem 10.5rem 28rem;
         border-color: transparent transparent var(--background-color);
+        width: 100%;
         bottom: 0;
         right: 0;
+        @include in {
+          border-width: 0rem 0rem 9rem 44rem;
+        }
       }
     }
     @each $color, $index in $listColor {
@@ -94,6 +110,9 @@
       margin: {
         top: 2rem;
         bottom: 2rem;
+      }
+      @include in {
+        font-size: 1rem;
       }
     }
   }

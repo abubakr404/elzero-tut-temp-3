@@ -1,40 +1,51 @@
 .Landing {
-  position: relative;
+  @extend %fCenter;
   min-height: calc(100vh - var(--header-height));
-  @extend %sectionBackground;
+  position: relative;
+  overflow: hidden;
   &::after {
     content: "";
-    position: absolute;
-    height: 15rem;
-    width: 200%;
-    transform: rotate(358deg) translate(-10%, 35%);
-    border-radius: 50%;
-    background-color: $white;
-    bottom: 0;
+    @include overlay($sectionBackground, 1);
+    transform: skewY(-6deg);
+    transform-origin: top left;
+    z-index: -1;
   }
   .container {
     @extend %twoColG;
     align-items: center;
     padding-bottom: 7.5rem;
-    height: 100%;
+    @include in(toSmall) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+    }
     > img {
-      animation: upDown 4s linear infinite alternate;
-      z-index: 1;
+      animation: upDown 5s linear infinite alternate;
+      @include in(toSmall) {
+        display: none;
+      }
     }
     > a {
       @extend %hPCenter;
+      @extend %transition;
       z-index: 1;
       color: var(--main-color);
       position: absolute;
       bottom: 2rem;
-      animation: bouncing 1.5s infinite;
+      &:hover {
+        color: var(--alt-color);
+      }
+      i {
+        animation: bouncing 1.5s infinite;
+      }
     }
   }
   h1 {
     font-size: 2.5rem;
     letter-spacing: -0.125rem;
-    @include in(smallMobile) {
-      font-size: 1.125rem;
+    @include in(toSmall) {
+      font-size: 1.875rem;
+      margin-bottom: 1rem;
     }
   }
   p {
@@ -42,7 +53,7 @@
     max-width: 31.25rem;
     line-height: 1.7;
     font-size: 1.4375rem;
-    @include in(smallMobile) {
+    @include in(toSmall) {
       font-size: 1rem;
     }
   }

@@ -10,6 +10,9 @@
   text-align: center;
   min-height: 45rem;
   align-items: end;
+  @include in {
+    grid-template-columns: 1fr;
+  }
   .plan {
     @extend %mainBoxShadow;
     background-color: var(--background-color);

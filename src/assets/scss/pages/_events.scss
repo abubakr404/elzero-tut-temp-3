@@ -2,12 +2,24 @@
   position: relative;
   > img {
     @extend %dotedBackground;
+    @include in(toSmall) {
+      display: none;
+    }
   }
   .container {
     position: relative;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: auto 1fr;
     gap: 5rem 1rem;
+    @include in(toSmall) {
+      grid-template-columns: 1fr;
+    }
+    > img {
+      max-width: 28.125rem;
+      @include in(toSmall) {
+        display: none;
+      }
+    }
   }
   .event {
     @extend %fCenter;
@@ -15,15 +27,22 @@
     text-align: center;
     gap: 2rem;
   }
-  .down-count {
+  .time {
     display: flex;
     gap: 1rem;
+    @include in(toSmall) {
+      gap: 0.5rem;
+    }
   }
-  .count-box {
+  .unit {
     @extend %transition;
     border: 0.0625rem solid #ccc;
     border-radius: 0.3125rem;
     min-width: 4.625rem;
+    background-color: var(--background-color);
+    @include in(toSmall) {
+      min-width: 3.625rem;
+    }
     &:hover {
       &,
       .number {
@@ -33,21 +52,35 @@
   }
   .number {
     @extend %transition;
+    @extend %bold;
     padding: 1rem;
     color: var(--main-color);
     border-bottom: 0.0625rem solid #ccc;
     font-size: 2rem;
-    @extend %bold;
+    @include in(toSmall) {
+      padding: 0.3125rem;
+      font-size: 1.5rem;
+    }
   }
   .title {
     padding: 0.5rem;
+    @include in(toSmall) {
+      padding: 0.3125rem;
+      font-size: 0.875rem;
+    }
   }
   .content {
     font-size: 1.1875rem;
     line-height: 1.5;
+    @include in {
+      font-size: 0.875rem;
+    }
     h3 {
       font-size: 1.875rem;
       margin-bottom: 1rem;
+      @include in {
+        font-size: 1.625rem;
+      }
     }
   }
   form {
@@ -59,21 +92,30 @@
     margin: auto;
     border-radius: 3rem;
     font-size: 1rem;
-    input[type="text"] {
-      padding: 1rem;
+    width: 100%;
+    max-width: 38.5rem;
+    @include in {
+      flex-direction: column;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+    }
+    input {
       border-radius: 2rem;
       border: none;
-      width: 26rem;
       font-size: inherit;
+      @include in {
+        border-radius: 0.25rem;
+      }
+    }
+    input[type="text"] {
+      padding: 1rem;
+      width: 100%;
     }
     input[type="submit"] {
       @extend %primaryButton;
       @extend %transition;
       @extend %bold;
-      font-size: inherit;
-      border: none;
       padding: 1.25rem;
-      border-radius: 2rem;
       cursor: pointer;
       &:hover {
         background-color: var(--alt-color);

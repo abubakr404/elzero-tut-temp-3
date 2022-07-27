@@ -1,29 +1,42 @@
 .Team {
   .container {
     @include responGridCol(18.75rem, 2.5rem);
+    @include in {
+      grid-template-columns: 1fr;
+    }
   }
   .top {
-    @include fCenter(center, flex-end);
+    @extend %fCenterE;
     padding-top: $boxSpeaser;
     background-color: #f3f3f3;
-    width: calc(100% - #{$boxSpeaser});
     margin-left: auto;
     border-radius: $boxBorder $boxBorder 0 0;
     position: relative;
+    width: calc(100% - #{$boxSpeaser});
+    @include in {
+      padding-top: 1rem;
+      width: 100%;
+    }
     img {
+      @include in {
+        max-width: calc(100% - #{$boxSpeaser + 1});
+      }
       @extend %transition;
       border-radius: $boxBorder;
       position: relative;
     }
   }
   .social {
-    position: relative;
     @extend %fCenter;
+    position: relative;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     min-width: 4rem;
     a {
       @extend %transition;
+      @extend %fCenter;
+      width: 100%;
+      min-height: 2.5rem;
       &:hover {
         color: var(--main-color);
       }
@@ -42,6 +55,10 @@
     background-color: #f3f3f3;
     padding: 1rem;
     margin-left: $boxSpeaser;
+    @include in {
+      margin-left: 0;
+      text-align: start;
+    }
     border-radius: 0 0 $boxBorder $boxBorder;
     &::before {
       border-radius: 0 0 $boxBorder $boxBorder;

@@ -1,3 +1,11 @@
+// mixin oneColG is mixin for control responsive of items in columns with screens
+
+@mixin oneColG($gap: 0rem) {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $gap;
+}
+
 // mixin twoColG is mixin for control responsive of items in columns with screens
 
 @mixin twoColG($gap: 0rem) {

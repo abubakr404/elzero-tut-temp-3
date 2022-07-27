@@ -1,6 +1,12 @@
 .Skills {
   .container {
     @extend %twoColG;
+    @include in {
+      grid-template-columns: 1fr;
+      img {
+        display: none;
+      }
+    }
   }
   .skills-box {
     h3 {
