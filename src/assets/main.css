@@ -1641,8 +1641,8 @@ header .magaMenu li:not(:last-of-type) a {
   position: relative;
 }
 .Stats .stat::after, .Stats .stat::before {
-  -webkit-transition: 1s linear;
-  transition: 1s linear;
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
   content: "";
   position: absolute;
   background-color: var(--main-color);
