@@ -1,36 +1,47 @@
-# frontend-mentor-challenge-22
+# Elzero Tutorials: template (3)
 
-frontend-mentor-challenge the link https://abubakr404.github.io/frontend-mentor-challenge-22/
+These is solution for personal website (landing) page tutorial assignment by Osama Elzero
 
-# Frontend Mentor - Blogr landing page solution
+## Screenshot
 
-This is a solution to the [Blogr landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+![](./iscreenshot.jpg)
 
-## Table of contents
+## Demo
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
+https://abubakr404.github.io/elzero-tut-temp-3/
 
-## Overview
 
-### The challenge
+## Run Locally
 
-Users should be able to:
+Clone the project
 
-- See hover states for interactive elements
+```bash
+  git clone https://github.com/abubakr404/elzero-tut-temp-3.git
+```
 
-### Screenshot
+Go to the project directory
 
-![](./public/iscreenshot.jpg)
+```bash
+  cd template_3
+```
 
-### Links
+Install dependencies
 
-- Live Site URL: [live site URL here](https://abubakr404.github.io/frontend-mentor-challenge-22/)
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Lessons Learned & challenge 
+
+I was Learned how to automated my work with task runner like Gulp js
+
 
 ## My process
 
@@ -42,8 +53,31 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - SASS
-- [Vue](https://vuejs.org/) - vue.js framework
+- Javascript 
+- Pugjs
+- Gulpjs
+- Nodejs
 
-## Author
 
-- Frontend Mentor - [@abubakr404](https://www.frontendmentor.io/profile/abubakr404)
+## Authors
+
+- [@abubakr hisham](https://www.github.com/abubakr404)
+
+
+## Related
+
+Here are some related projects
+
+[Elzero Tutorials: template (1)](https://github.com/abubakr404/elzero-tut-temp-1/)
+
+[Elzero Tutorials: template (2)](https://github.com/abubakr404/elzero-tut-temp-2/)
+
+
+## Support
+
+For support, email abubakr404@outlook.com.
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at abubakr404@outlook.com
