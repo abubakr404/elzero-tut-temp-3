@@ -20,7 +20,7 @@
     position: relative;
     &::before {
       @extend %transition;
-      @include line(var(--main-color), 0.25rem, top, 0%, 100%, 0);
+      @include line(var(--main-color), 0.25rem, top, 100%, 100%, 0);
       transform: translateX(50%);
     }
     &:hover {
